@@ -62,9 +62,9 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: e47cddcf6fe0b87b698c                            #生成的clientID
-  clientSecret: 482e16d3bd4cb9ec64e24d45fcf7f2ccbe53222e    #生成的clientSecret
-  repo: hyuga0410/hyuga0410.github.io   #仓库名称
+  clientID: 2c1cdc917ea312598d8e                            #生成的clientID
+  clientSecret: 128abf3f41c71952c52d401c9a12967d9f96b10f    #生成的clientSecret
+  repo: hyuga0410.github.io   #仓库名称
   owner: hyuga0410    #github用户名
   admin: hyuga0410
   distractionFreeMode: true #是否启用类似FB的阴影遮罩

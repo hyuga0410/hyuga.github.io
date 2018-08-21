@@ -12,9 +12,9 @@ tags:
     - alfred
 ---
 
-### 转载自：https://github.com/mrdear/command-search-alfred
+**转载自：** https://github.com/mrdear/command-search-alfred
 
-> 感谢作者[屈定](https://mrdear.cn/)的分享
+> **感谢作者[屈定](https://mrdear.cn/)的分享**
 
 ---
 
@@ -70,11 +70,13 @@ tags:
 
 ### 更新记录
 
-#### 2018.02.26
+2018.02.26
 
 关键词匹配去除`-_空白`特殊字符
 
 ---
+
+以上为作者[屈定](https://mrdear.cn/)的文章内容，下面为个人使用感受和使用过程中需要注意的地方
 
 ## 使用感受
 * 惊艳

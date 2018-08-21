@@ -7,7 +7,7 @@ description: "每一次失败都通向成功."
 keyword: "秦枫, hyuga0410, @hyuga0410, 秦枫的博客, Hyuga0410, 博客, 个人网站, 互联网, Web, 后端"
 url: "http://hyuga.top"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/hyuga0410/hyuga.github.io.git" # you code repository
+github_repo: "https://github.com/hyuga0410/hyuga0410.github.io.git" # you code repository
 
 # Sidebar settings侧边栏
 sidebar: true                           # 是否使用侧栏
@@ -64,7 +64,7 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: e47cddcf6fe0b87b698c                            #生成的clientID
   clientSecret: 482e16d3bd4cb9ec64e24d45fcf7f2ccbe53222e    #生成的clientSecret
-  repo: hyuga0410/hyuga.github.io   #仓库名称
+  repo: hyuga0410/hyuga0410.github.io   #仓库名称
   owner: hyuga0410    #github用户名
   admin: hyuga0410
   distractionFreeMode: true #是否启用类似FB的阴影遮罩

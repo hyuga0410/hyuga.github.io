@@ -12,7 +12,7 @@ tags:
     - alfred
 ---
 
-**转载自：** https://github.com/mrdear/command-search-alfred
+**转载自：** [https://github.com/mrdear/command-search-alfred](https://github.com/mrdear/command-search-alfred)
 
 > **感谢作者[屈定](https://mrdear.cn/)的分享**
 

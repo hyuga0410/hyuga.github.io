@@ -20,10 +20,11 @@ tags:
 ```
 brew cask install docker
 ```
-虽然开了`shadwsocks`，但是一直下载不了，最后还是直接http下载：https://download.docker.com/mac/stable/26399/Docker.dmg
+虽然开了`shadwsocks`，但是一直下载不了，最后还是直接http下载：
+[https://download.docker.com/mac/stable/26399/Docker.dmg](https://download.docker.com/mac/stable/26399/Docker.dmg)
 
 # 安装
-先到官网注册账号：https://cloud.docker.com/?next=https%3A%2F%2Fcloud.docker.com
+先到官网注册账号：[https://cloud.docker.com/?next=https%3A%2F%2Fcloud.docker.com](https://cloud.docker.com/?next=https%3A%2F%2Fcloud.docker.com)
 
 ![](/img/2018-08-23/1.png)
 拖拽安装，搞定！！！
@@ -58,7 +59,8 @@ OK! 正常安装.
 * 提示本机已安装过`VirtualBox`，请升级或者卸载，我之前卸载过，但可能没卸载干净，所以一直没法打开docker。
 * 错误界面之前忘了截图，没法贴出来。后来我又重新安装了`VirtualBox`，Ok，正常打开Docker了。
 
-`VirtualBox`下载地址：https://download.virtualbox.org/virtualbox/5.2.18/VirtualBox-5.2.18-124319-OSX.dmg
+`VirtualBox`下载地址：
+[https://download.virtualbox.org/virtualbox/5.2.18/VirtualBox-5.2.18-124319-OSX.dmg](https://download.virtualbox.org/virtualbox/5.2.18/VirtualBox-5.2.18-124319-OSX.dmg)
 
 # 使用例子
 如果终端运行 `docker version`、`docker info` 都正常的话，开始尝试安装docker镜像并运行

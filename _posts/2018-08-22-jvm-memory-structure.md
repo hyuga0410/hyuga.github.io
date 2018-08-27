@@ -149,15 +149,15 @@ Java中的几种常量池后续篇章再总结
 栈是由栈帧组成，每当线程调用一个java方法时，JVM就会在该线程对应的栈中压入一个帧，而帧是由局部变量区、操作数栈和帧数据区组成。
 那在一个代码块中，栈到底是什么形式呢？下面是我从《深入JVM》中摘抄的一个例子，大家可以看看：
 {% highlight java %}{% endhighlight %}
-  1. public class Main{
-  2.     public static void addAndPrint(){
-  3.         double result = addTwoTypes(1,88.88);
-  4.         System.out.println(result);
-  5.     }
-  6.     public static double addTwoTypes(int i,double d){
-  7.         return i + d;
-  8.     }
-  9. }
+public class Main{
+    public static void addAndPrint(){
+        double result = addTwoTypes(1,88.88);
+        System.out.println(result);
+    }
+    public static double addTwoTypes(int i,double d){
+        return i + d;
+    }
+}
 {% endhighlight %}
 
 执行过程中的三个快照：
@@ -173,11 +173,11 @@ Java中的几种常量池后续篇章再总结
 - 堆我们可以想象成一个储藏室，里面的物品随意摆放，或者想象成垃圾场。
 - 堆分为`堆内内存`和`堆外内存`:
     - 堆内内存
-        - 1. 在使用堆内内存时候完全遵守JVM虚拟机的内存管理机制，也就是GC统一管理;
-        - 2. 堆外内存就是把内存分配在Java虚拟机之外，这些内存OS直接管理，我们经常用java.nio.DirectByteBuffer对象进行堆外内存的管理和使用，堆外内存优点：减少回收，加快复制，堆外内存的缺点就是内存难以控制。
+        - 在使用堆内内存时候完全遵守JVM虚拟机的内存管理机制，也就是GC统一管理;
+        - 堆外内存就是把内存分配在Java虚拟机之外，这些内存OS直接管理，我们经常用java.nio.DirectByteBuffer对象进行堆外内存的管理和使用，堆外内存优点：减少回收，加快复制，堆外内存的缺点就是内存难以控制。
     - 堆外内存
-        - 1. 存储的全部是对象实例，每个对象都包含一个与之对应的class的信息(class信息存放在方法区)。
-        - 2. jvm只有一个堆区(heap)被所有线程共享，堆中不存放基本类型和对象引用，只存放对象本身，几乎所有的对象实例和数组都在堆中分配。
+        - 存储的全部是对象实例，每个对象都包含一个与之对应的class的信息(class信息存放在方法区)。
+        - jvm只有一个堆区(heap)被所有线程共享，堆中不存放基本类型和对象引用，只存放对象本身，几乎所有的对象实例和数组都在堆中分配。
 
 #### 堆内内存
 堆内内存是我们平常工作中接触比较多的，在jvm参数中只要使用-Xms，-Xmx等参数就可以设置堆的大小和最大值，理解jvm的堆还需要知道下面这个公式：

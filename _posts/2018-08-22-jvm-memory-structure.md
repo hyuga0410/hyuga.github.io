@@ -249,7 +249,7 @@ DirectByteBuffer类是在Java Heap外分配内存，对堆外内存的申请主�
 - 当产生的栈深度超过了允许的栈深度时抛出StackOverFlowError（栈溢出错误），比如无限递归。
 
 ---
-## 参考资料:
+## 参考资料
 **《深入理解Java虚拟机》**
 
    链接：[Java虚拟机的内存组成以及堆内存介绍-HollisChuang's Blog][1]

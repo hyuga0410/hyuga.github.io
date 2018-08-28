@@ -118,7 +118,7 @@ public ThreadPoolExecutor(int corePoolSize,
 
 `非核心线程数` = `最大线程数` - `核心线程数`
 
-- 任务来了，当正在执行任务的线程数<核心线程数，则任务直接交由核心线程执行
+- 任务来了，当正在执行任务的线程数 < 核心线程数，则任务直接交由核心线程执行
 - 任务来了，当核心线程都在执行任务，并且队列workQueue未满，则任务会先放到队列中等待执行
 - 任务来了，当核心线程都在执行任务，并且队列workQueue也满了，则开启一个非核心线程执行任务
 - 任务来了，当核心线程都在执行任务，并且队列workQueue也满了，也达到了线程池允许的最大线程数量，则触发handler拒绝策略默认抛出RejectExecutionException异常
@@ -138,19 +138,20 @@ public ThreadPoolExecutor(int corePoolSize,
 
 **handler**
 > 线程无法执行新任务时的拒绝策略
+
 - ThreadPoolExecutor.AbortPolicy:丢弃任务并抛出RejectedExecutionException异常。
 - ThreadPoolExecutor.DiscardPolicy：也是丢弃任务，但是不抛出异常。
 - ThreadPoolExecutor.DiscardOldestPolicy：丢弃队列最前面的任务，然后重新尝试执行任务（重复此过程）
 - ThreadPoolExecutor.CallerRunsPolicy：只要线程池不关闭，该策略直接在调用者线程中，运行当前被丢弃的任务
 
-个人认为这4中策略不友好，最好自己定义拒绝策略，实现RejectedExecutionHandler接口
+个人认为这4中策略不友好，最好自己定义拒绝策略，实现RejectedExecutionHandler接口。
 
 ## 墙裂推荐的单例线程池
 线程池为什么要使用单例实现？
 
 如果不单例，随处创建线程池，那还用线程池干嘛？！
 
-Hollis大神墙裂推荐的单例实现方式，枚举单例。
+[Hollis大神](http://www.hollischuang.com/)墙裂推荐的单例实现方式，枚举单例。
 
 下面将使用枚举方式实现单例线程池
 {% highlight java %}

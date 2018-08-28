@@ -49,7 +49,7 @@ so，怎样才能减少线程的耗损，提高其复用性和效率？
 ## 常见线程池
 `newSingleThreadExecutor`
 
-![](../img/2018-08-27/newSingleton.png)
+![](/img/2018-08-27/newSingleton.png)
 {% highlight java %}
 return new FinalizableDelegatedExecutorService
             (new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>()));
@@ -59,7 +59,7 @@ return new FinalizableDelegatedExecutorService
 
 `newFixedThreadPool`
 
-![](../img/2018-08-27/newFixedThreadPool.png)
+![](/img/2018-08-27/newFixedThreadPool.png)
 {% highlight java %}
 return new ThreadPoolExecutor(nThreads, nThreads, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>());
 {% endhighlight %}
@@ -68,7 +68,7 @@ return new ThreadPoolExecutor(nThreads, nThreads, 0L, TimeUnit.MILLISECONDS, new
 
 `newCachedThreadPool`
 
-![](../img/2018-08-27/newcachedthreadpool.png)
+![](/img/2018-08-27/newcachedthreadpool.png)
 {% highlight java %}
 return new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS, new SynchronousQueue<Runnable>());
 {% endhighlight %}
@@ -77,7 +77,7 @@ return new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS, new S
 
 `newScheduledThreadPool`
 
-![](../img/2018-08-27/newScheduledThreadPool.png)
+![](/img/2018-08-27/newScheduledThreadPool.png)
 {% highlight java %}
 super(corePoolSize, Integer.MAX_VALUE, 0, NANOSECONDS, new DelayedWorkQueue());
 {% endhighlight %}

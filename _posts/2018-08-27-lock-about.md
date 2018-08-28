@@ -149,6 +149,8 @@ UPDATE tb_product_stock SET number=number-1 WHERE product_id=#{productId} for up
 UPDATE tb_product_stock SET number=number-1 WHERE product_id=#{productId} and number=#{number}
 ```
 
+![](/img/2018-08-27/lock-about.png)
+
 ## 参考资料
 
 [Java中的锁-悲观锁、乐观锁，公平锁、非公平锁，互斥锁、读写锁](https://blog.csdn.net/loongshawn/article/details/76985272)

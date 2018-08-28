@@ -107,8 +107,8 @@ public ThreadPoolExecutor(int corePoolSize,
 - keepAliveTime：非核心线程的存活时间，当核心线程都用上后，后续请求将有可能创建非核心线程（newSingleThreadExecutor、newFixedThreadPool不会创建非核心线程），
 非核心线程执行完任务后，闲置时间超过keepAliveTime，则会被回收掉。如果ThreadPoolExecutor的allowCoreThreadTimeOut属性设置为true，则该参数也表示核心线程的超时时长。
     - executorService.allowCoreThreadTimeOut(true);
-    - true：keepAliveTime同样影响核心线程，最终线程池线程数量为0
-    - false：keepAliveTime只影响非核心线程
+        - true：keepAliveTime同样影响核心线程，最终线程池线程数量为0
+        - false：keepAliveTime只影响非核心线程
 - unit：keepAliveTime的时间单位。
 - workQueue：任务队列，该队列主要用来存储已经被提交但是尚未执行的任务。
 - threadFactory：为线程池提供自定义功能，一般用来自定义线程池的名称。

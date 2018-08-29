@@ -4,7 +4,7 @@ title:        "Java集合类List详解"
 subtitle:     "剖析Java集合类List特性"
 date:         2018-08-27 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018-08-27/head-top.png"
+header-img:   "img/2018-08-27/head-top.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
@@ -15,22 +15,21 @@ tags:
 ## 集合简介
 什么是集合？
 
-    存储对象引用的容器。
+存储对象引用的容器。
 
-    Java中有是那种集合类型：
-    - list（列表）
-    - set（集）
-    - map（映射）
+Java中有是那种集合类型：
+- list（列表）
+- set（集）
+- map（映射）
 
 为什么要有集合List？不使用数组？
 
     集合底层也是采用数组，但是数组长度是固定的，而集合长度会根据对象增长而变化。
 
 集合List与数组的区别？
-
-    数组长度固定，集合长度可变。
-    数组可存储基本数据类型，集合只能存储对象。
-    定义一个数组只能存储单一类型的元素，定义一个集合什么对象都能存储。（List(Object)）
+- 数组长度固定，集合长度可变。
+- 数组可存储基本数据类型，集合只能存储对象。
+- 定义一个数组只能存储单一类型的元素，定义一个集合什么对象都能存储。（List(Object)）
 
 ## 集合List常用方法
 - list.isEmpty();
@@ -62,27 +61,27 @@ tags:
 ## 集合结构
 ![](../img/2018-08-27/collection-structure.png)
 
--|Collection:
-    -|List: 有序结构,元素可重复
-        -|ArrayList: 数组实现, 查找快, 增删慢.
+- Collection:
+    - List: 有序结构,元素可重复
+        - ArrayList: 数组实现, 查找快, 增删慢.
             - 由于是数组实现, 在增和删的时候会牵扯到数组增容, 以及拷贝元素. 所以慢.
             - 数组是可以直接按索引查找, 所以查找时较快
-        -|LinkedList: 链表实现, 增删快, 查找慢.
+        - LinkedList: 链表实现, 增删快, 查找慢.
             - 由于链表实现, 增加时只要让前一个元素记住自己就可以, 删除时让前一个元素记住后一个元素, 后一个元素记住前一个元素.
             - 在添加和删除元素时具有比ArrayList更好的性能. 但在get与set方面弱于ArrayList.
-        -|Vector: 和ArrayList原理相同, 但线程安全, 效率略低.
+        - Vector: 和ArrayList原理相同, 但线程安全, 效率略低.
             - 和ArrayList实现方式相同, 但考虑了线程安全问题, 所以效率略低(使用了synchronized).
-    -|Set: 无存储顺序, 不可重复
-        -|HashSet: 基于HashMap的key来实现。
-        -|TreeSet: 采用树结构实现(红黑树算法)
+    - Set: 无存储顺序, 不可重复
+        - HashSet: 基于HashMap的key来实现。
+        - TreeSet: 采用树结构实现(红黑树算法)
             - 元素是按顺序进行排列，但是add()、remove()以及contains()等方法都是复杂度为O(log (n))的方法。
             - 还提供了一些方法来处理排序的set, 如first(), last(), headSet(), tailSet()等等。
-        -|LinkedHashSet: 底层使用 LinkedHashMap 来保存所有元素。双链表结构。
--| Map: 键值对
-    -|HashMap: 键值对结构, 根据key的hashCode值put、get数据。最多一个key为null的记录, 允许多条value为null的记录。非线程安全。
-    -|TreeMap: 默认根据key升序排序, 也可以指定排序比较器。不允许key为null。非线程安全。
-    -|HashTable: key和value都不允许为null。线程安全。
-    -|LinkedHashMap: 链表结构，保存了记录的插入顺序。key和都都允许为空。非线程安全。
+        - LinkedHashSet: 底层使用 LinkedHashMap 来保存所有元素。双链表结构。
+-  Map: 键值对
+    - HashMap: 键值对结构, 根据key的hashCode值put、get数据。最多一个key为null的记录, 允许多条value为null的记录。非线程安全。
+    - TreeMap: 默认根据key升序排序, 也可以指定排序比较器。不允许key为null。非线程安全。
+    - HashTable: key和value都不允许为null。线程安全。
+    - LinkedHashMap: 链表结构，保存了记录的插入顺序。key和都都允许为空。非线程安全。
 
 ## 各种集合实例使用场景
 - List：数据需要有序存储，并允许重复
@@ -95,9 +94,6 @@ tags:
     - LinkedHashSet：有序，去重
 
 ## List源码分析
-底层结构：一维数组。
-
-结构特点：有序，重复。
 
 #### ArrayList
 
@@ -358,19 +354,6 @@ java.util.concurrent包下的容器都是安全失败，可以再多线程下并
 [Java 集合Collection与List的详解](https://www.cnblogs.com/joyco773/p/6759981.html)
 
 [Java集合框架之List---ArrayList与LinkedList源码分析](https://blog.csdn.net/oChangWen/article/details/50586260)
-
-Java 中 Set 与 List 有什么不同?链接：链接：https://t.zsxq.com/mqZZFqZ
-
-Java中的List有几种实现，各有什么不同？链接：链接：https://t.zsxq.com/6QNbyvR
-
-知道什么是synchronizedList吗？他和Vector有何区别？链接：链接：https://t.zsxq.com/UNRJEUF
-
-通过Array.asList获得的List有何特点，使用时应该注意什么？链接：链接：https://t.zsxq.com/u3VzFae
-
-什么是fail-fast，什么是fail-safe，有什么区别吗？链接：链接：https://t.zsxq.com/rBEaAiy
-
-如何在遍历的同时删除ArrayList中的元素。链接：链接：https://t.zsxq.com/YFMzZFq
-
 
 
 [1]:https://docs.oracle.com/javase/8/docs/api/?java/util/Collection.html

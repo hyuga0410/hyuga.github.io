@@ -19,7 +19,7 @@ Java集合主要分为三种类型：
 - map（映射）
 
 ## 集合结构
-![](../img/2018-08-27/collection-structure.png)
+![](/img/2018-08-27/collection-structure.png)
 
 - Collection: Collection是最基本的集合接口，声明了适用于JAVA集合（只包括Set和List）的通用方法。
     - List: 有序结构,元素可重复

@@ -348,15 +348,12 @@ LinkedList的特性：
 
 链表结构比较好理解，就不多做解释了！
 
-## Collections静态方法
-
-
 ## Fail-Fast机制（快速失败）
 > java容器的保护机制，能够防止多个进程/线程同时修改同一个容器的内容
 
-在用迭代器遍历一个集合对象时，如果遍历过程中对集合对象的内容进行了修改（增加、删除、修改），则会抛出 ConcurrentModificationException（并发修改异常）
+在用迭代器遍历一个集合对象时，如果遍历过程中对集合对象的内容进行了修改（增加、删除、修改），则会抛出 `ConcurrentModificationException`（并发修改异常）
 
-ArrayList也采用了快速失败的机制，通过记录modCount参数来实现。在面对并发的修改时，迭代器很快就会完全失败，而不是冒着在将来某个不确定时间发生任意不确定行为的风险。
+`ArrayList`也采用了快速失败的机制，通过记录[modCount]参数来实现。在面对并发的修改时，迭代器很快就会完全失败，而不是冒着在将来某个不确定时间发生任意不确定行为的风险。
 
 ## Fail-Safe机制（安全失败）
 > 对集合结构的修改都会在copy的集合上进行修改，再更新。因此不会抛出 ConcurrentModificationException（并发修改异常）
@@ -378,16 +375,17 @@ Fail-Safe机制 不允许并发修改，不允许同时读写
 Fail-Safe机制 允许并发修改，允许同时读写
 
 ## 使用注意事项
-1. 迭代删除List的某个元素
+> 迭代删除List的某个元素
+
 别使用如下方式，会报 `ConcurrentModificationException`
 - for(Object o : list) {list.remove(o);}
 建议使用 Iterator 方式删除元素
 - Iterator<Object> iterator = list.iterator(); while(iterator.hasNext()){iterator.remove();}
 
-2.Arrays.asList() 数组转list
+> Arrays.asList() 数组转list
 - asList得到的是原素组的一个视图，只允许查，不允许操作，操作会报错
 
-3. Collections.synchronizedList()：将不安全的List转换成安全的List
+> Collections.synchronizedList()：将不安全的List转换成安全的List
 
 ## 参考资料
 [Java Platform SE 8][1]

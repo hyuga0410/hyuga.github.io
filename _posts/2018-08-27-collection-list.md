@@ -59,6 +59,12 @@ List接口主要实现类：
 - ArrayList: 数组长度可变，随机访问速度快，插入、删除速度慢
 - LinkedList: 链表实现，插入、删除速度快，随机访问速度慢
 - Vector: 基本和ArrayList一致，只是每个方法加了synchronized关键字，线程安全
+    - 默认扩容为原来的2倍
+    - 可主动声明扩容时增加的容量大小，通过 Vector(int initialCapacity, int capacityIncrement)构造函数实现
+- CopyOnWriteArrayList: 线程安全的ArrayLISt
+    - 写入时copy底层数组副本，不影响原数组的读，修改完成后，一个原子操作将新的数组替换原数组
+    - 删除时也一样，copy后修改再更新，不影响读，ReentrantLock保证原子性
+    - 所有操作接口都采用锁实现 final ReentrantLock lock = this.lock;
 
 ## 集合List常用方法
 - list.isEmpty();
@@ -342,15 +348,46 @@ LinkedList的特性：
 
 链表结构比较好理解，就不多做解释了！
 
+## Collections静态方法
+
+
 ## Fail-Fast机制（快速失败）
-在用迭代器遍历一个集合对象时，如果遍历过程中对集合对象的内容进行了修改（增加、删除、修改），则会抛出ConcurrentModificationException。
+> java容器的保护机制，能够防止多个进程/线程同时修改同一个容器的内容
+
+在用迭代器遍历一个集合对象时，如果遍历过程中对集合对象的内容进行了修改（增加、删除、修改），则会抛出 ConcurrentModificationException（并发修改异常）
 
 ArrayList也采用了快速失败的机制，通过记录modCount参数来实现。在面对并发的修改时，迭代器很快就会完全失败，而不是冒着在将来某个不确定时间发生任意不确定行为的风险。
 
-## Fail-Safe（安全失败）
+## Fail-Safe机制（安全失败）
+> 对集合结构的修改都会在copy的集合上进行修改，再更新。因此不会抛出 ConcurrentModificationException（并发修改异常）
+
 采用安全失败机制的集合容器，在遍历时不时直接在集合内容上访问的，而是先复制原有集合内容，在拷贝的集合上进行遍历。
 
-java.util.concurrent包下的容器都是安全失败，可以再多线程下并发使用，并发修改。
+java.util.concurrent包下的容器都是安全失败，可以在多线程下并发使用，不会触发并发修改异常。
+- ConcurrentHashMap
+- CopyOnWriteArrayList
+- CopyOnWriteArraySet
+- ...
+
+fail-safe机制有两个问题：
+- 增删操作都会先复制集合，产生大量的无效对象，开销大，给gc增加压力。
+- 无法保证读取的数据是目前原始数据结构中的数据。取出的可能是修改前的数据。
+
+## 两种机制对比
+Fail-Safe机制 不允许并发修改，不允许同时读写
+Fail-Safe机制 允许并发修改，允许同时读写
+
+## 使用注意事项
+1. 迭代删除List的某个元素
+别使用如下方式，会报 `ConcurrentModificationException`
+- for(Object o : list) {list.remove(o);}
+建议使用 Iterator 方式删除元素
+- Iterator<Object> iterator = list.iterator(); while(iterator.hasNext()){iterator.remove();}
+
+2.Arrays.asList() 数组转list
+- asList得到的是原素组的一个视图，只允许查，不允许操作，操作会报错
+
+3. Collections.synchronizedList()：将不安全的List转换成安全的List
 
 ## 参考资料
 [Java Platform SE 8][1]

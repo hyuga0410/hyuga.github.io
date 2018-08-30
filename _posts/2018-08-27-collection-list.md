@@ -13,21 +13,52 @@ tags:
 ---
 
 ## 集合简介
-什么是集合？
-> 存储对象引用的容器。
-
-Java中有是那种集合类型：
+Java集合主要分为三种类型：
 - list（列表）
 - set（集）
 - map（映射）
 
+## 集合结构
+![](../img/2018-08-27/collection-structure.png)
+
+- Collection: Collection是最基本的集合接口，声明了适用于JAVA集合（只包括Set和List）的通用方法。
+    - List: 有序结构,元素可重复
+        - ArrayList: 数组实现, 查找快, 增删慢.
+            - 由于是数组实现, 在增和删的时候会牵扯到数组增容, 以及拷贝元素. 所以慢.
+            - 数组是可以直接按索引查找, 所以查找时较快
+        - LinkedList: 链表实现, 增删快, 查找慢.
+            - 由于链表实现, 增加时只要让前一个元素记住自己就可以, 删除时让前一个元素记住后一个元素, 后一个元素记住前一个元素.
+            - 在添加和删除元素时具有比ArrayList更好的性能. 但在get与set方面弱于ArrayList.
+        - Vector: 和ArrayList原理相同, 但线程安全, 效率略低.
+            - 和ArrayList实现方式相同, 但考虑了线程安全问题, 所以效率略低(使用了synchronized).
+    - Set: 无存储顺序, 不可重复
+        - HashSet: 基于HashMap的key来实现。
+        - TreeSet: 采用树结构实现(红黑树算法)
+            - 元素是按顺序进行排列，但是add()、remove()以及contains()等方法都是复杂度为O(log (n))的方法。
+            - 还提供了一些方法来处理排序的set, 如first(), last(), headSet(), tailSet()等等。
+        - LinkedHashSet: 底层使用 LinkedHashMap 来保存所有元素。双链表结构。
+-  Map: 键值对
+    - HashMap: 键值对结构, 根据key的hashCode值put、get数据。最多一个key为null的记录, 允许多条value为null的记录。非线程安全。
+    - TreeMap: 默认根据key升序排序, 也可以指定排序比较器。不允许key为null。非线程安全。
+    - HashTable: key和value都不允许为null。线程安全。
+    - LinkedHashMap: 链表结构，保存了记录的插入顺序。key和都都允许为空。非线程安全。
+
+什么是List？
+- 存储对象引用的容器。
+- 特征：其元素以线性方式存储，集合中可以存放重复对象。
+
 为什么要有集合List？不使用数组？
-> 集合底层也是采用数组，但是数组长度是固定的，而集合长度会根据对象增长而变化。
+- 集合底层也是采用数组，但是数组长度是固定的，而集合长度会根据对象增长而变化。
 
 集合List与数组的区别？
 - 数组长度固定，集合长度可变。
 - 数组可存储基本数据类型，集合只能存储对象。
 - 定义一个数组只能存储单一类型的元素，定义一个集合什么对象都能存储。（List(Object)）
+
+List接口主要实现类：
+- ArrayList: 数组长度可变，随机访问速度快，插入、删除速度慢
+- LinkedList: 链表实现，插入、删除速度快，随机访问速度慢
+- Vector: 基本和ArrayList一致，只是每个方法加了synchronized关键字，线程安全
 
 ## 集合List常用方法
 - list.isEmpty();
@@ -55,31 +86,6 @@ Java中有是那种集合类型：
     - list.lastIndexOf(Object o);
 
 > 注意：集合和数组中存放的都是对象的引用而非对象本身.
-
-## 集合结构
-![](../img/2018-08-27/collection-structure.png)
-
-- Collection:
-    - List: 有序结构,元素可重复
-        - ArrayList: 数组实现, 查找快, 增删慢.
-            - 由于是数组实现, 在增和删的时候会牵扯到数组增容, 以及拷贝元素. 所以慢.
-            - 数组是可以直接按索引查找, 所以查找时较快
-        - LinkedList: 链表实现, 增删快, 查找慢.
-            - 由于链表实现, 增加时只要让前一个元素记住自己就可以, 删除时让前一个元素记住后一个元素, 后一个元素记住前一个元素.
-            - 在添加和删除元素时具有比ArrayList更好的性能. 但在get与set方面弱于ArrayList.
-        - Vector: 和ArrayList原理相同, 但线程安全, 效率略低.
-            - 和ArrayList实现方式相同, 但考虑了线程安全问题, 所以效率略低(使用了synchronized).
-    - Set: 无存储顺序, 不可重复
-        - HashSet: 基于HashMap的key来实现。
-        - TreeSet: 采用树结构实现(红黑树算法)
-            - 元素是按顺序进行排列，但是add()、remove()以及contains()等方法都是复杂度为O(log (n))的方法。
-            - 还提供了一些方法来处理排序的set, 如first(), last(), headSet(), tailSet()等等。
-        - LinkedHashSet: 底层使用 LinkedHashMap 来保存所有元素。双链表结构。
--  Map: 键值对
-    - HashMap: 键值对结构, 根据key的hashCode值put、get数据。最多一个key为null的记录, 允许多条value为null的记录。非线程安全。
-    - TreeMap: 默认根据key升序排序, 也可以指定排序比较器。不允许key为null。非线程安全。
-    - HashTable: key和value都不允许为null。线程安全。
-    - LinkedHashMap: 链表结构，保存了记录的插入顺序。key和都都允许为空。非线程安全。
 
 ## 各种集合实例使用场景
 - List：数据需要有序存储，并允许重复

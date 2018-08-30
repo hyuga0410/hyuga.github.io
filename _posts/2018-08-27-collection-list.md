@@ -271,7 +271,7 @@ remove(Object o)中通过遍历element寻找是否存在传入对象，一旦找
 
 为什么找到了元素就知道了index，不通过remove(index)来移除元素呢？
 
-因为fastRemove，因为找到元素就相当于确定了index不会超过边界，而且fastRemove并不返回被移除的元素。
+因为`fastRemove`，因为找到元素就相当于确定了index不会超过边界，而且fastRemove并不返回被移除的元素。
 
 下面是fastRemove的代码，基本和remove(index)一致。
 {% highlight java %}
@@ -322,15 +322,15 @@ private void grow(int minCapacity) {
     elementData = Arrays.copyOf(elementData, newCapacity);
 }
 {% endhighlight %}
-Vector比ArrayList直接，默认大小就是10，同样支持自定义长度。
+`Vector`比`ArrayList`直接，默认大小就是10，同样支持自定义长度。
 
-ArrayList和Vector的区别：
+`ArrayList`和`Vector`的区别：
 - ArrayList在内存不够时默认是扩展50% + 1个，Vector是默认扩展1倍。
 - Vector提供indexOf(obj, start)接口，ArrayList没有。
 - Vector属于线程安全级别的，但是大多数情况下不使用Vector，因为线程安全需要更大的系统开销。
 
 #### LinkedList
-LinkedList底层是一个双向链表，查询慢，插入删除快。
+`LinkedList`底层是一个双向链表，查询慢，插入删除快。
 每次查询都要从头或尾进行遍历，所以查询慢。
 {% highlight java %}
 public class LinkedList<E>
@@ -338,7 +338,7 @@ public class LinkedList<E>
     implements List<E>, Deque<E>, Cloneable, java.io.Serializable{}
 {% endhighlight %}
 
-LinkedList的特性：
+`LinkedList`的特性：
 - 继承于AbstractSequentialList的双向链表。它也可以被当作堆栈、队列或双端队列进行操作。
 - 实现 List 接口，能对它进行队列操作。
 - 实现 Deque 接口，即能将LinkedList当作双端队列使用。
@@ -353,20 +353,20 @@ LinkedList的特性：
 
 在用迭代器遍历一个集合对象时，如果遍历过程中对集合对象的内容进行了修改（增加、删除、修改），则会抛出 `ConcurrentModificationException`（并发修改异常）
 
-`ArrayList`也采用了快速失败的机制，通过记录[modCount]参数来实现。在面对并发的修改时，迭代器很快就会完全失败，而不是冒着在将来某个不确定时间发生任意不确定行为的风险。
+`ArrayList`也采用了快速失败的机制，通过记录`modCount`参数来实现。在面对并发的修改时，迭代器很快就会完全失败，而不是冒着在将来某个不确定时间发生任意不确定行为的风险。
 
 ## Fail-Safe机制（安全失败）
 > 对集合结构的修改都会在copy的集合上进行修改，再更新。因此不会抛出 ConcurrentModificationException（并发修改异常）
 
 采用安全失败机制的集合容器，在遍历时不时直接在集合内容上访问的，而是先复制原有集合内容，在拷贝的集合上进行遍历。
 
-java.util.concurrent包下的容器都是安全失败，可以在多线程下并发使用，不会触发并发修改异常。
+`java.util.concurrent`包下的容器都是安全失败，可以在多线程下并发使用，不会触发并发修改异常。
 - ConcurrentHashMap
 - CopyOnWriteArrayList
 - CopyOnWriteArraySet
 - ...
 
-fail-safe机制有两个问题：
+`fail-safe`机制有两个问题：
 - 增删操作都会先复制集合，产生大量的无效对象，开销大，给gc增加压力。
 - 无法保证读取的数据是目前原始数据结构中的数据。取出的可能是修改前的数据。
 
@@ -376,7 +376,6 @@ Fail-Safe机制 允许并发修改，允许同时读写
 
 ## 使用注意事项
 > 迭代删除List的某个元素
-
 别使用如下方式，会报 `ConcurrentModificationException`
 - for(Object o : list) {list.remove(o);}
 建议使用 Iterator 方式删除元素

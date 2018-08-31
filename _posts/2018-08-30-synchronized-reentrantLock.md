@@ -322,12 +322,12 @@ at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireInterruptibly(Ab
 at java.util.concurrent.locks.ReentrantLock.lockInterruptibly(ReentrantLock.java:335)
 at hyuga.excel.Test.run(Test.java:45)
 at java.lang.Thread.run(Thread.java:748)
-main中断线程2响应开始`（主线程中断了线程2）`
+main中断线程2响应开始（主线程中断了线程2）
 main中断线程2响应成功
-线程2给LOCK2释放锁开始`（线程2开始释放已获得的lock2锁）`
+线程2给LOCK2释放锁开始（线程2开始释放已获得的lock2锁）
 线程2给LOCK2释放锁成功
-线程2:线程退出`（线程2结束）`
-线程1给LOCK2加锁成功`（线程1继续获取到lock2的锁）`
+线程2:线程退出（线程2结束）
+线程1给LOCK2加锁成功（线程1继续获取到lock2的锁）
 线程1:拿到两个lock，并完成了工作
 线程1给LOCK1释放锁开始
 线程1给LOCK1释放锁成功

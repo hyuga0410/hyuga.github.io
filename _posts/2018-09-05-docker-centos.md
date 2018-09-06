@@ -1,7 +1,7 @@
 ---
 layout:       post
-title:        "Docker打包web项目镜像"
-subtitle:     "学习docker打包web项目镜像并启动"
+title:        "Docker一些概念和指令"
+subtitle:     "一些常用指令，还有docker的一些概念"
 date:         2018-09-05 22:42:05
 author:       "Hyuga"
 header-img:   "img/2018-09/head-top-1.jpg"
@@ -20,7 +20,7 @@ tags:
 - `docker ps` 可以查看当前本地容器仓库正在运行的容器
 - `docker ps -a` 可以查看当前本地容器仓库已安装的容器
 
-**一个容器的声明周期：**
+**一个容器的生命周期：**
 - 从远程仓库拉取镜像到本地镜像仓库
 - 根据镜像创建容器放到本地容器仓库
 - 启动容器
@@ -49,6 +49,7 @@ docker rm `docker ps -a -q`
 sudo docker rm $(sudo docker ps -a -q)
 
 ```
+
 - 删除所有镜像
 ```
 docker rmi `docker images -q`

@@ -44,13 +44,14 @@ tags:
 
 ---
 - 删除所有容器
+
 ```
 docker rm `docker ps -a -q`
 sudo docker rm $(sudo docker ps -a -q)
-
 ```
 
 - 删除所有镜像
+
 ```
 docker rmi `docker images -q`
 ```

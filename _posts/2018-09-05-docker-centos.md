@@ -1,7 +1,7 @@
 ---
 layout:       post
 title:        "Docker一些概念和指令"
-subtitle:     "一些常用指令，还有docker的一些概念"
+subtitle:     "常用docker指令整理"
 date:         2018-09-05 22:42:05
 author:       "Hyuga"
 header-img:   "img/2018-09/head-top-1.jpg"

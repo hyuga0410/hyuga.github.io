@@ -67,9 +67,18 @@ OK! 正常安装.
 如果终端运行 `docker version`、`docker info` 都正常的话，开始尝试安装docker镜像并运行
 - 运行一个`Nginx`
 ```
-$ docker run -d -p 80:80 --name webserver nginx
+$ docker run -d -p 80:80 --name hyuga-server nginx
+输出容器ID：
 7da352e6435aeddbd414f8d8062dac3de6e406b76cf5b0d586904f34945e91fb
 ```
+- 这条指令的意思是：以nginx为镜像副本，创建一个名为webserver的容器，内外部访问端口都是80
+- docker run：启动容器
+- `-d`：使容器在后台运行
+- `-p`：
+    - 第一个80是本机浏览器要访问的端口，第二个是容器服务的端口
+    - 意思是：能通过本机80端口印射到容器的80端口
+- `--name hyuga-server`：是以nginx镜像为副本创建一个容器，名为hyuga-server
+
 服务运行后，浏览器访问 http://localhost
 如果看到下面这个页面，说明`Nginx`镜像安装并启动成功。
 ![](/img/2018-08-23/5.png)

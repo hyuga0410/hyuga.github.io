@@ -9,7 +9,7 @@ header-mask:  0.3
 catalog:      true
 multilingual: false
 tags:
-    - docker
+    - idea
 ---
 
 # 前言
@@ -26,11 +26,11 @@ tags:
 
 ![](/img/2018-09/external-tools-1.png)
 
-打开Tools -> External Tools，点击左下角的`+`，自行添加工具指令即可
+打开Tools -> External Tools，点击左下角的`+`，自行添加工具指令即可。
 
 ![](/img/2018-09/external-tools-2.png)
 
-配置完成后apply保存，然后在编辑窗口或者选中文件，点右键，鼠标滑至External Tools处，就会显示你自定义的指令
+配置完成后apply保存，然后在编辑窗口或者选中文件，点右键，鼠标滑至External Tools处，就会显示你自定义的指令。
 
 ![](/img/2018-09/external-tools-3.png)
 
@@ -47,7 +47,7 @@ tags:
 
 ![](/img/2018-09/external-tools-8.png)
 
-`Open Class Folder`这个指令比较特殊，使用的并不是jdk的指令，而是mac系统的open指令，目的在于打开当前选中的java文件编译后class文件所在目录，便于文件定位抽取。
+`Echo` 和 `Open` 指令比较特殊，使用的并不是jdk的指令，而是第三方应用指令和系统指令，更多组合请自行摸索。
 
 # 注意
 上面这几个是针对于操作Java文件配置的，如果你需要操作其他类型的文件而发现指令失败，请自行百度。

@@ -47,6 +47,11 @@ tags:
 
 ![](/img/2018-09/external-tools-8.png)
 
+红框中的三个选项分别是：
+- `Program`：程序，可以选择jdk/bin/java等指令，也可选择系统指令和其他第三方应用指令
+- `Parameters`：参数，可以选择文件路径、名称等各种参数
+- `Working directory`：工作目录
+
 `Echo` 和 `Open` 指令比较特殊，使用的并不是jdk的指令，而是第三方应用指令和系统指令，更多组合请自行摸索。
 
 # 注意

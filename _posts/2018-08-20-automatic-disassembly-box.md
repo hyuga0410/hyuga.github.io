@@ -4,7 +4,7 @@ title:        "Java的自动拆装箱"
 subtitle:     "归纳自动拆装箱知识点"
 date:         2018-08-20 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018-08-20/head-top.jpeg"
+header-img:   "img/2018/2018-08/head-top-3.jpeg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
@@ -53,7 +53,7 @@ int j = i; 编译后 int j = Integer.valueOf(1).intValue();
 > 拆箱  包装器类型自动转换为基础数据类型
 
 ##### 基础类型与包装类对比
-![](/img/2018-08-20/基础数据类型对应包装器类型.png)
+![](/img/2018/2018-08/基础数据类型对应包装器类型.png)
 
 ---
 ## 为什么需要自动拆装箱

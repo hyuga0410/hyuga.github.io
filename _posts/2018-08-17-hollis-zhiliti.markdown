@@ -4,7 +4,7 @@ title:        "Hollis七夕智力题解答"
 subtitle:     "七夕节H大给出四道智力题，渣渣记录一下"
 date:         2018-08-17 10:49:31
 author:       "Hyuga"
-header-img:   "img/2018-08-17/head-top.jpg"
+header-img:   "img/2018/2018-08/head-top.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
@@ -16,11 +16,11 @@ tags:
 
 ##### 题目一
 
-![](/img/2018-08-17/zhiliti-1.png)
+![](/img/2018/2018-08/zhiliti-1.png)
 
 ##### 题目二
 
-![](/img/2018-08-17/zhiliti-2.png)
+![](/img/2018/2018-08/zhiliti-2.png)
 
 ##### 题目三
 

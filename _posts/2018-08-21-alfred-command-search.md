@@ -4,7 +4,7 @@ title:        "command-search-alfred神器"
 subtitle:     "一款alfred插件工具，指令管理神器"
 date:         2018-08-21 15:42:05
 author:       "Hyuga"
-header-img:   "img/2018-08-21/head-top.jpg"
+header-img:   "img/2018/2018-08/head-top-4.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
@@ -48,12 +48,12 @@ tags:
 
 也由于json外置,如果你觉得workflow添加太麻烦的话,直接改这个json,添加对应的数据即可.
 
-![](/img/2018-08-21/1.png)
+![](/img/2018/2018-08/1.png)
 
 
 ### 演示
 
-![](/img/2018-08-21/yulan.gif)
+![](/img/2018/2018-08/yulan.gif)
 
 
 ### 其他问题
@@ -62,11 +62,11 @@ tags:
 
 在alfred插件中选择粘贴这个环节
 
-![](/img/2018-08-21/3.png)
+![](/img/2018/2018-08/3.png)
 
 然后勾掉自动粘贴即可.
 
-![](/img/2018-08-21/4.png)
+![](/img/2018/2018-08/4.png)
 
 ### 更新记录
 
@@ -92,4 +92,4 @@ tags:
     * 本地：⌥ + space 打开alfred，输入`cmd  `，注意打多一个空格，点击`打开命令配置`，这时会弹出一个文本编辑框，也就是data.js，直接配置就好了
 3. 本来还想试着用网址路径配置的，结果发现想多了，最终采取多终端配置的方式。后续将慢慢完善自己的data.json文件！！！
 
-![](/img/2018-08-21/5.png)
+![](/img/2018/2018-08/5.png)

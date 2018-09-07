@@ -4,7 +4,7 @@ title:        "并发、锁的一些概念"
 subtitle:     "浅显整合一些并发、锁相关的知识点"
 date:         2018-08-27 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018-08-27/head-top.jpg"
+header-img:   "img/2018/2018-08/head-top-7.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
@@ -149,7 +149,7 @@ UPDATE tb_product_stock SET number=number-1 WHERE product_id=#{productId} for up
 UPDATE tb_product_stock SET number=number-1 WHERE product_id=#{productId} and number=#{number}
 ```
 
-![](/img/2018-08-27/lock-about.png)
+![](/img/2018/2018-08/lock-about.png)
 
 ## 参考资料
 

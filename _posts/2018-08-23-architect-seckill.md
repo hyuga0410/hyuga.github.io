@@ -4,7 +4,7 @@ title:        "秒杀系统优化学习总结"
 subtitle:     "归纳自W3Cschool的架构师之路系列文章"
 date:         2018-08-23 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018-08-23/head-top.jpg"
+header-img:   "img/2018/2018-08/head-top-6.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false

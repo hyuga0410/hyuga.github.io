@@ -4,7 +4,7 @@ title:        "Java集合类List详解"
 subtitle:     "剖析Java集合类List特性"
 date:         2018-08-27 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018-08-27/head-top.jpg"
+header-img:   "img/2018/2018-08/head-top-9.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
@@ -19,7 +19,7 @@ Java集合主要分为三种类型：
 - map（映射）
 
 ## 集合结构
-![](/img/2018-08-27/collection-structure.png)
+![](/img/2018/2018-08/collection-structure.png)
 
 - Collection: Collection是最基本的集合接口，声明了适用于JAVA集合（只包括Set和List）的通用方法。
     - List: 有序结构,元素可重复

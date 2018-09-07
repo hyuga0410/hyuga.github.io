@@ -2,9 +2,9 @@
 layout:       post
 title:        "Docker安装过程记录"
 subtitle:     "学习docker安装使用过程记录"
-date:         2018-08-23 22:42:05
+date:         2018/2018-08/ 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018-08-23/head-top.jpg"
+header-img:   "img/2018/2018-08/head-top-6.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
@@ -27,9 +27,9 @@ brew cask install docker
 # 安装
 先到官网注册账号：[https://cloud.docker.com/?next=https%3A%2F%2Fcloud.docker.com](https://cloud.docker.com/?next=https%3A%2F%2Fcloud.docker.com)
 
-![](/img/2018-08-23/1.png)
+![](/img/2018/2018-08//23-1.png)
 拖拽安装，搞定！！！
-![](/img/2018-08-23/2.png)
+![](/img/2018/2018-08//23-2.png)
 登录！！！
 因为我之前登录过了，所以是这个界面。
 
@@ -46,8 +46,8 @@ docker-machine version 0.13.0, build 9ba6da9
 OK! 正常安装.
 
 # 配置国内镜像加速
-![](/img/2018-08-23/3.png)
-![](/img/2018-08-23/4.png)
+![](/img/2018/2018-08//23-3.png)
+![](/img/2018/2018-08//23-4.png)
 点击图标 -> Preferences... -> Daemon -> Registry mirrors
 - 网易加速：http://hub-mirror.c.163.com
 - Docker 官方提供的中国 registry mirror：https://registry.docker-cn.com
@@ -81,7 +81,7 @@ $ docker run -d -p 80:80 --name hyuga-server nginx
 
 服务运行后，浏览器访问 http://localhost
 如果看到下面这个页面，说明`Nginx`镜像安装并启动成功。
-![](/img/2018-08-23/5.png)
+![](/img/2018/2018-08//23-5.png)
 
 指令：
 ```

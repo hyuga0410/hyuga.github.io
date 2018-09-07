@@ -4,7 +4,7 @@ title:        "JVM内存结构"
 subtitle:     "详解Java虚拟机运行时内存结构"
 date:         2018-08-22 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018-08-22/head-top.jpg"
+header-img:   "img/2018/2018-08/head-top-5.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
@@ -28,8 +28,8 @@ tags:
   - Execution Engine（执行引擎）
 
 ## JVM运行时内存结构
-![](/img/2018-08-22/jvm运行时数据区.png)
-![](/img/2018-08-22/jvm运行时数据区详细.png)
+![](/img/2018/2018-08/jvm运行时数据区.png)
+![](/img/2018/2018-08/jvm运行时数据区详细.png)
 
 `线程私有`：程序计数器、java栈、本地方法栈
 

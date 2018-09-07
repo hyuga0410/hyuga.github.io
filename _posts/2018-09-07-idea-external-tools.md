@@ -2,9 +2,9 @@
 layout:       post
 title:        "IDEA之External Tools分享"
 subtitle:     "Intellij IDEA的外部工具配置分享"
-date:         2018-09-07 22:42:05
+date:         2018/2018-09-07 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018-09/head-top-2.jpg"
+header-img:   "img/2018/2018-09/head-top-2.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
@@ -24,28 +24,28 @@ tags:
 # 配置及使用
 打开idea偏好设置
 
-![](/img/2018-09/external-tools-1.png)
+![](/img/2018/2018-09/external-tools-1.png)
 
 打开Tools -> External Tools，点击左下角的`+`，自行添加工具指令即可。
 
-![](/img/2018-09/external-tools-2.png)
+![](/img/2018/2018-09/external-tools-2.png)
 
 配置完成后apply保存，然后在编辑窗口或者选中文件，点右键，鼠标滑至External Tools处，就会显示你自定义的指令。
 
-![](/img/2018-09/external-tools-3.png)
+![](/img/2018/2018-09/external-tools-3.png)
 
 点击，执行，👌
 
 # 个人配置
-![](/img/2018-09/external-tools-4.png)
+![](/img/2018/2018-09/external-tools-4.png)
 
-![](/img/2018-09/external-tools-5.png)
+![](/img/2018/2018-09/external-tools-5.png)
 
-![](/img/2018-09/external-tools-6.png)
+![](/img/2018/2018-09/external-tools-6.png)
 
-![](/img/2018-09/external-tools-7.png)
+![](/img/2018/2018-09/external-tools-7.png)
 
-![](/img/2018-09/external-tools-8.png)
+![](/img/2018/2018-09/external-tools-8.png)
 
 红框中的三个选项分别是：
 - `Program`：程序，可以选择jdk/bin/java等指令，也可选择系统指令和其他第三方应用指令
@@ -60,6 +60,6 @@ tags:
 
 还有，配置后的指令是可以在idea中设置快捷键的，如果你用得频繁，可以考虑配下快捷键。
 
-![](/img/2018-09/external-tools-9.png)
+![](/img/2018/2018-09/external-tools-9.png)
 
 更多的jdk指令、系统指令组合，就等各位去发掘吧。

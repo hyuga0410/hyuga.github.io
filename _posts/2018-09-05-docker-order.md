@@ -2,9 +2,9 @@
 layout:       post
 title:        "Docker一些概念和指令"
 subtitle:     "常用docker指令整理"
-date:         2018-09-05 22:42:05
+date:         2018/2018-09-05 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018-09/head-top-1.jpg"
+header-img:   "img/2018/2018-09/head-top-1.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
@@ -66,10 +66,10 @@ docker rmi `docker images -q`
 
 启动完成后，可在浏览器中访问 `localhost:8080`，可以看到tomcat的欢迎界面.
 
-![](/img/2018-09/welcome-tomcat.png)
+![](/img/2018/2018-09/welcome-tomcat.png)
 - 查看正在运行的tomcat容器 `docker ps`
 
-![](/img/2018-09/docker-ps.png)
+![](/img/2018/2018-09/docker-ps.png)
 
 # 暂停
 个人精力有限，docker入门不难，但稍微深入花费精力太多，暂且不折腾了，等以后有精力了再整理。

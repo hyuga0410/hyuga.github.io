@@ -45,7 +45,7 @@ tags:
 ![](/img/2018/2018-09/plugins-8.png)
 
 - `Grep Console`
-日志样式颜色自定义，输入日志不再单调。
+日志样式颜色自定义，控制台日志颜色不再单调。
 
 ## 开发规范
 - `Alibaba Java Coding Guidelines`
@@ -62,7 +62,7 @@ tags:
 - `iBATIS/MyBatis mini-plugin`
 快捷跳转到Mapper.xml方法工具。
 
-`Free Mybatis plugin`效果和上面的差不多。
+- `Free Mybatis plugin`效果和上面的差不多。
 
 - `Mybatis Log Plugin`
 生成sql自动将参数替换到占位符中，方便测试执行。
@@ -102,9 +102,11 @@ Maven优秀插件，便于解决jar包冲突等问题。
 
 ## 反编译
 - `ASM Bytecode plugin`
-反编译神器！！！来源：https://github.com/mrdear/asm-bytecode-intellij
+反编译神器！！！
 
-配置: `--stringbuilder false --arrayiter fase --collectioniter false --decodelambdas false --sugarboxing false`
+> 来源：[https://github.com/mrdear/asm-bytecode-intellij](https://github.com/mrdear/asm-bytecode-intellij)
+>
+> 配置: `--stringbuilder false --arrayiter fase --collectioniter false --decodelambdas false --sugarboxing false`
 
 ## Markdown
 - `Markdown Navigator`

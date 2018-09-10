@@ -18,30 +18,30 @@ tags:
 ## 壁纸
 #### IDEA自带背景设置
 设置背景图，仅限单张
-![](../img/2018/2018-09/plugins-1.png)
+![](/img/2018/2018-09/plugins-1.png)
 
 #### Background Image Plus
 设置背景图，可选择文件夹，定时轮播
-![](../img/2018/2018-09/plugins-3.png)
+![](/img/2018/2018-09/plugins-3.png)
 
 ## 美化
 #### Rainbow Brackets
 小括号颜色渲染很舒服
-![](../img/2018/2018-09/plugins-4.png)
+![](/img/2018/2018-09/plugins-4.png)
 
 #### Power Mode II
-![](../img/2018/2018-09/plugins-2.png)
-![](../img/2018/2018-09/plugins-5.png)
+![](/img/2018/2018-09/plugins-2.png)
+![](/img/2018/2018-09/plugins-5.png)
 
 ## 翻译
 #### Translation
 翻译神器，最好用的idea翻译插件，没有之一。支持三种翻译软件api
-![](../img/2018/2018-09/plugins-6.png)
-![](../img/2018/2018-09/plugins-7.png)
+![](/img/2018/2018-09/plugins-6.png)
+![](/img/2018/2018-09/plugins-7.png)
 
 #### CodeGlance
 右边生成快捷预览图，便于竖屏滚动和预览类长度
-![](../img/2018/2018-09/plugins-8.png)
+![](/img/2018/2018-09/plugins-8.png)
 
 #### Grep Console
 日志样式颜色自定义

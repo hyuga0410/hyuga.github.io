@@ -74,6 +74,7 @@ values
 
 ## EXISTS和NOT EXISTS
 语法：`SELECT … FROM table WHERE EXISTS (subquery)`
+
 语义：将主查询的数据，放到子查询中做条件验证，根据验证结果(true or false)来决定主查询的数据是否得以保存。
 {% highlight sql %}
 select id,name from company where exists (select * from product where comid=company.id);
@@ -102,14 +103,15 @@ select id,name from company where id not in(select comid from product);
 - 尽量避免大事务操作，提高系统并发能力。
 
 ## 场景解析
-- left join、right join、inner join效率？
+1. left join、right join、inner join效率？
 left和right都是外链接，效率不及inner join，当需要等值连接的时候，一定要用inner join。
-{% highlight sql %}
+
 下面这条语句其实也就是隐式使用了inner join
+{% highlight sql %}
 SELECT A.id,A.name,B.id,B.name FROM A,B WHERE A.id = B.id;
 {% endhighlight %}
 
-- 用外连接还是子查询？
+2. 用外连接还是子查询？
 子查询会先将主表进行全表查询，然后再根据条件逐步执行子查询语句。如果主表是一张很大的表会严重影响性能。
 能用inner join替代的就一定要用inner。
 
@@ -123,7 +125,7 @@ where exists(select 1 from t_site_reservation r where t.FReserveTelNo like '135%
 {% endhighlight %}
 执行结果:
 
-![](../img/2018/2018-09/explain-1.png)
+![](/img/2018/2018-09/explain-1.png)
 下面逐步分析执行过程！！！
 
 mysql执行计划结果有10列，每一列有各自的含义。

@@ -138,8 +138,9 @@ mysql执行计划结果有10列，每一列有各自的含义。
 - id相同执行顺序由上至下。
 - id不同，id值越大优先级越高，越先被执行。
 - id为null时表示一个结果集，不需要使用它查询，常出现在包含union等查询语句中。
-
+```
 可见上面例子执行顺序从上往下，1-1-2
+```
 
 #### select_type
 > 每个子查询的查询类型，一些常见的查询类型。
@@ -165,8 +166,9 @@ where exists(select 1 from t_site_reservation r where t.FReserveTelNo like '135%
 - 如果不涉及对数据表的操作，那么这显示为null。
 - 如果显示为尖括号括起来的<derived N>就表示这个是临时表，后边的N就是执行计划中的id，表示结果来自于这个查询产生。
 - 如果是尖括号括起来的<union M,N>，与<derived N>类似，也是一个临时表，表示这个结果来自于union查询的id为M,N的结果集。
-
-    上面sql三张表都用了别名，所以显示t-b-r
+```
+上面sql三张表都用了别名，所以显示t-b-r
+```
 
 #### type
 > 访问类型
@@ -182,14 +184,15 @@ where exists(select 1 from t_site_reservation r where t.FReserveTelNo like '135%
 - eq_ref：在join查询中使用PRIMARY KEY or UNIQUE NOT NULL索引关联。
 - const：使用主键或者唯一索引，且匹配的结果只有一条记录。
 - system const：连接类型的特例，查询的表为系统表。
-```
+
 性能排名从好到差：system，const，eq_ref，ref，fulltext，ref_or_null，unique_subquery，index_subquery，range，index_merge，index，ALL
 除了ALL之外，其他的type都可以使用到索引，除了index_merge之外，其他的type只可以用到一个索引。
 
 如果通过执行计划发现某张表的查询语句的type显示为ALL，那就要考虑添加索引，或者更换查询方式，使用索引进行查询。
-```
 
-    第一条是ALL扫描了全表，第二条eq_ref在jion中使用主键或唯一索引，第三条index使用了遍历索引。
+```
+第一条是ALL扫描了全表，第二条eq_ref在jion中使用主键或唯一索引，第三条index使用了遍历索引。
+```
 
 #### possible_keys
 > 可能使用的索引，但不一定会使用。
@@ -205,9 +208,11 @@ where exists(select 1 from t_site_reservation r where t.FReserveTelNo like '135%
 - TIPS:查询中若使用了覆盖索引(覆盖索引：索引的数据覆盖了需要查询的所有数据)，则该索引仅出现在key列表中。
 - select_type为index_merge时，这里可能出现两个以上的索引，其他的select_type这里只会出现一个。
 
-    第一条null，没有执行任何索引
-    第二条执行了主键索引b.FID
-    第三条执行了T_SITE_RESERVATION_FKCUSTOMEID，这里不太理解怎么会执行这个？！
+```
+第一条null，没有执行任何索引
+第二条执行了主键索引b.FID
+第三条执行了T_SITE_RESERVATION_FKCUSTOMEID，这里不太理解怎么会执行这个？！
+```
 
 #### key_length
 - 索引长度 char()、varchar()索引长度的计算公式：
@@ -231,7 +236,9 @@ where exists(select 1 from t_site_reservation r where t.FReserveTelNo like '135%
 - Using filesort 使用文件排序，使用非索引列进行排序时出现，非常消耗性能，尽量优化。
 - Using temporary 使用了临时表。
 
-    第一条使用了where子句过滤，第二条null，第三条使用了where子句过滤和覆盖索引。
+```
+第一条使用了where子句过滤，第二条null，第三条使用了where子句过滤和覆盖索引。
+```
 
 ## 参考资料
 [教你如何定位及优化SQL语句的性能问题-Hollis](https://mp.weixin.qq.com/s?__biz=MzI3NzE0NjcwMg==&mid=2650122000&idx=1&sn=3d8e924fb28473649ef620e07a96bfb2&chksm=f36bba31c41c3327c43845e61a9b17a9ff03e28a0a36d0e09f09e3bbfc21f443db0174a6a9f6&scene=21#wechat_redirect)

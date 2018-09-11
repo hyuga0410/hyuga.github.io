@@ -240,5 +240,11 @@ where exists(select 1 from t_site_reservation r where t.FReserveTelNo like '135%
 第一条使用了where子句过滤，第二条null，第三条使用了where子句过滤和覆盖索引。
 ```
 
+## 优化步骤
+- 先从业务入手，看是否有更高效的关联或者移除无效表关联和无用的返回字段
+- 查看是否未创建必要的索引，或者是否用错索引，改用组合索引或使用强制索引
+- 剖析sql复杂度，简化sql，通过语法优化或者通过代码组合优化
+- 通过执行计划分析sql执行过程，分析优化
+
 ## 参考资料
 [教你如何定位及优化SQL语句的性能问题-Hollis](https://mp.weixin.qq.com/s?__biz=MzI3NzE0NjcwMg==&mid=2650122000&idx=1&sn=3d8e924fb28473649ef620e07a96bfb2&chksm=f36bba31c41c3327c43845e61a9b17a9ff03e28a0a36d0e09f09e3bbfc21f443db0174a6a9f6&scene=21#wechat_redirect)

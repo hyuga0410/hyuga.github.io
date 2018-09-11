@@ -103,7 +103,7 @@ select id,name from company where id not in(select comid from product);
 - 尽量避免大事务操作，提高系统并发能力。
 
 ## 场景解析
-1. left join、right join、inner join效率？
+**left join、right join、inner join效率？**
 left和right都是外链接，效率不及inner join，当需要等值连接的时候，一定要用inner join。
 
 下面这条语句其实也就是隐式使用了inner join
@@ -111,7 +111,7 @@ left和right都是外链接，效率不及inner join，当需要等值连接的�
 SELECT A.id,A.name,B.id,B.name FROM A,B WHERE A.id = B.id;
 {% endhighlight %}
 
-2. 用外连接还是子查询？
+**用外连接还是子查询？**
 子查询会先将主表进行全表查询，然后再根据条件逐步执行子查询语句。如果主表是一张很大的表会严重影响性能。
 能用inner join替代的就一定要用inner。
 
@@ -132,6 +132,7 @@ mysql执行计划结果有10列，每一列有各自的含义。
 
 #### id
 > 由一组数字组成。表示一个查询中各个子查询的执行顺序。
+
 - id相同执行顺序由上至下。
 - id不同，id值越大优先级越高，越先被执行。
 - id为null时表示一个结果集，不需要使用它查询，常出现在包含union等查询语句中。
@@ -140,12 +141,13 @@ mysql执行计划结果有10列，每一列有各自的含义。
 
 #### select_type
 > 每个子查询的查询类型，一些常见的查询类型。
-- SIMPLE：不包含任何子查询或union等查询
-- PRIMARY：包含子查询最外层查询就显示为 PRIMARY
-- SUBQUERY：在select或 where字句中包含的查询
-- DERIVED：from字句中包含的查询
-- UNION：出现在union后的查询语句中
-- UNION RESULT：从UNION中获取结果集
+
+- SIMPLE：不包含任何子查询或union等查询。
+- PRIMARY：包含子查询最外层查询就显示为 PRIMARY。
+- SUBQUERY：在select或 where字句中包含的查询。
+- DERIVED：from字句中包含的查询。
+- UNION：出现在union后的查询语句中。
+- UNION RESULT：从UNION中获取结果集。
 
 ```
 select * from t_site_reservation 是 PRIMARY
@@ -156,8 +158,9 @@ where exists(select 1 from t_site_reservation r where t.FReserveTelNo like '135%
 
 #### table
 > 这个显而易见就是操作表
-- 如果查询使用了别名，那么这里显示的是别名
-- 如果不涉及对数据表的操作，那么这显示为null
+
+- 如果查询使用了别名，那么这里显示的是别名。
+- 如果不涉及对数据表的操作，那么这显示为null。
 - 如果显示为尖括号括起来的<derived N>就表示这个是临时表，后边的N就是执行计划中的id，表示结果来自于这个查询产生。
 - 如果是尖括号括起来的<union M,N>，与<derived N>类似，也是一个临时表，表示这个结果来自于union查询的id为M,N的结果集。
 
@@ -165,14 +168,15 @@ where exists(select 1 from t_site_reservation r where t.FReserveTelNo like '135%
 
 #### type
 > 访问类型
+
 - ALL：扫描全表数据
-- index：遍历索引
-- range：索引范围查找
-- index_subquery：在子查询中使用 ref
-- unique_subquery：在子查询中使用 eq_ref
-- ref_or_null：对Null进行索引的优化的 ref
-- fulltext：使用全文索引
-- ref：使用非唯一索引查找数据
+- index：遍历索引。
+- range：索引范围查找。
+- index_subquery：在子查询中使用 ref。
+- unique_subquery：在子查询中使用 eq_ref。
+- ref_or_null：对Null进行索引的优化的 ref。
+- fulltext：使用全文索引。
+- ref：使用非唯一索引查找数据。
 - eq_ref：在join查询中使用PRIMARY KEY or UNIQUE NOT NULL索引关联。
 - const：使用主键或者唯一索引，且匹配的结果只有一条记录。
 - system const：连接类型的特例，查询的表为系统表。
@@ -187,6 +191,7 @@ where exists(select 1 from t_site_reservation r where t.FReserveTelNo like '135%
 
 #### possible_keys
 > 可能使用的索引，但不一定会使用。
+
 - 查询涉及到的字段上若存在索引，则该索引将被列出来。
 - 当该列为 NULL时就要考虑当前的SQL是否需要优化了。
 
@@ -194,6 +199,7 @@ where exists(select 1 from t_site_reservation r where t.FReserveTelNo like '135%
 
 #### key
 > 显示MySQL在查询中实际使用的索引，若没有使用索引，显示为NULL。
+
 - TIPS:查询中若使用了覆盖索引(覆盖索引：索引的数据覆盖了需要查询的所有数据)，则该索引仅出现在key列表中。
 - select_type为index_merge时，这里可能出现两个以上的索引，其他的select_type这里只会出现一个。
 
@@ -207,17 +213,19 @@ where exists(select 1 from t_site_reservation r where t.FReserveTelNo like '135%
 
 #### ref
 > 表示上述表的连接匹配条件，即哪些列或常量被用于查找索引列上的值
-- 如果是使用的常数等值查询，这里会显示const
-- 如果是连接查询，被驱动表的执行计划这里会显示驱动表的关联字段
-- 如果是条件使用了表达式或者函数，或者条件列发生了内部隐式转换，这里可能显示为func
+
+- 如果是使用的常数等值查询，这里会显示const。
+- 如果是连接查询，被驱动表的执行计划这里会显示驱动表的关联字段。
+- 如果是条件使用了表达式或者函数，或者条件列发生了内部隐式转换，这里可能显示为func。
 
 #### rows
 > 返回估算的结果集数目，注意这并不是一个准确值。
 
 #### extra
-> extra的信息非常丰富，常见的有：
-- Using index 使用覆盖索引
-- Using where 使用了用where子句来过滤结果集
+> extra的信息非常丰富，常见的有
+
+- Using index 使用覆盖索引。
+- Using where 使用了用where子句来过滤结果集。
 - Using filesort 使用文件排序，使用非索引列进行排序时出现，非常消耗性能，尽量优化。
 - Using temporary 使用了临时表。
 

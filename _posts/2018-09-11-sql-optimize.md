@@ -104,6 +104,7 @@ select id,name from company where id not in(select comid from product);
 
 ## 场景解析
 **left join、right join、inner join效率？**
+
 left和right都是外链接，效率不及inner join，当需要等值连接的时候，一定要用inner join。
 
 下面这条语句其实也就是隐式使用了inner join
@@ -112,6 +113,7 @@ SELECT A.id,A.name,B.id,B.name FROM A,B WHERE A.id = B.id;
 {% endhighlight %}
 
 **用外连接还是子查询？**
+
 子查询会先将主表进行全表查询，然后再根据条件逐步执行子查询语句。如果主表是一张很大的表会严重影响性能。
 能用inner join替代的就一定要用inner。
 

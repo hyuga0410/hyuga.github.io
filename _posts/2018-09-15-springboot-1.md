@@ -13,20 +13,20 @@ tags:
 ---
 
 ## SpringBoot简介
-- 简化Spring开发的一个框架
-- 整合了Spring全家桶（整合SSH/SSM/安全/docker/缓存/权限/消息/分布式/监控）
-- 内嵌tomcat容器，通过main方法启动，部署jar包运行项目，不需要配置启动tomcat
-- 整合了SpringMvc
-- 发展趋势，以后的项目将会面向SOA（http/webservice）的开发 --> 微服务（比原先的SOA更简单和高效）
-- 小项目首推boot开发，如果不需要用SpringCloud，老项目不建议转SpringBoot
-- 几乎全部都是注解，没有配置
+- 与Spring同源，是简化Spring开发的一个框架.
+- 整合了Spring全家桶（整合SSH/SSM/安全/docker/缓存/权限/消息/分布式/监控等等）.
+- 内嵌tomcat容器，通过main方法启动，部署jar包运行项目，不需要配置启动tomcat.
+- 整合了SpringMvc，只需要引入spring-boot-start-web依赖.
+- 这几年微服务越来越火，SpringBoot面向SOA（http/webservice）的开发，配套SpringCloud --> 微服务（比原先的SOA更简单和高效）.
+- 小项目和新项目首推SpringBoot开发，老项目如果不需要用SpringCloud则不建议转SpringBoot.
+- SpringBoot几乎全部都是注解，没有配置.
 
 ## 微服务
 > 微服务：一种架构风格（封装RPC远程调用）
 
-原来的RPC通过HTTP/WebService形式调用，用起来复杂度比较高，类似直接用JDBC，后来发展到直接调用对象形式来调用微服务（Dubbo），这种方式的名字就是：微服务。
+原来的RPC通过HTTP/WebService形式调用，用起来复杂而笨重，类似直接用JDBC，后来发展到直接调用对象形式来调用微服务（Dubbo/Cloud），这种方式就叫做：微服务。
 
-微服务其实就是封装了远程调用，比如：Dubbo，Spring cloud
+微服务其实就是封装了远程调用，比如：Dubbo，SpringCloud
 
 ## Hello World
 SpringBoot官网：[https://projects.spring.io/spring-boot/](https://projects.spring.io/spring-boot/)

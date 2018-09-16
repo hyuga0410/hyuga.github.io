@@ -26,7 +26,7 @@ tags:
 
 原来的RPC通过HTTP/WebService形式调用，用起来复杂而笨重，类似直接用JDBC，后来发展到直接调用对象形式来调用微服务（Dubbo/Cloud），这种方式就叫做：微服务。
 
-微服务其实就是封装了远程调用，比如：Dubbo，Springloud
+微服务其实就是封装了远程调用，比如：Dubbo，SpringCloud
 
 ## Hello World
 SpringBoot官网：[https://projects.spring.io/spring-boot/](https://projects.spring.io/spring-boot/)

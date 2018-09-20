@@ -4,7 +4,7 @@ title:        "原生JS对象方法Object.entries(obj)"
 subtitle:     "简单记录下js的几个对象扩展方法"
 date:         2018-09-20 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018/2018-09/head-top-5.jpg"
+header-img:   "img/2018/2018-09/head-top-6.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
@@ -13,7 +13,7 @@ tags:
 ---
 ## 前言
 
-项目前后端分离后，js撸得很少很少，最近改老项目发现有个js很有趣，功能是拼接一个对象的属性和值，作为一个get的参数，代码如下：
+项目前后端分离后，JS撸得很少很少，最近改老项目发现有个js很有趣，功能是拼接一个对象的属性和值，作为一个get的参数，代码如下：
 
 {% highlight js %}
 var paramArray = {'boy':'hyuga', 'girl':'HelloKitty'};
@@ -23,11 +23,11 @@ var param = Object.entries(paramArray)
                 })
             .join('&');
 console.log(param);
-输出：
-boy=hyuga&girl=HelloKitty
+
+输出：boy=hyuga&girl=HelloKitty
 {% endhighlight %}
 
-上面这段js初一看一脸懵逼，链式、函数式、还有个什么entries？
+上面这段JS初一看一脸懵逼，链式、函数式、还有个什么entries？
 
 接下来就先了解下JS提供的几个对象扩展方法
 
@@ -85,9 +85,11 @@ Object.entries(paramArray)
 {% endhighlight %}
 
 `Object.entries(paramArray)` 将paramArray拆解成[['boy', 'hyuga'], ['girl', 'HelloKitty']]
+
 `.map(function (i) { return i.join('='); })` 函数式编程，对上面转换后的数组遍历操作元素，i是数组元素对象，如['boy', 'hyuga']，转换成 ["boy=hyuga", "girl=HelloKitty"]
+
 `.join('&')` 将上面转换好的数组再用&拼接成字符串
 
-其实简洁了很多，不需要用for...in...遍历拼接了。
+这种拼接写法简洁了很多，不需要用for...in...遍历拼接了。
 
 本文只是简单记录了下工作中遇到的情况，和JS对象扩展中的几个方法。真的是学海无涯，什么都在快速发展。

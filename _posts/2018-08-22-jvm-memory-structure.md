@@ -1,6 +1,6 @@
 ---
 layout:       post
-title:        "JVM内存结构"
+title:        "JVM系列之JVM内存结构"
 subtitle:     "详解Java虚拟机运行时内存结构"
 date:         2018-08-22 22:42:05
 author:       "Hyuga"

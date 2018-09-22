@@ -4,7 +4,7 @@ title:        "Docker一些概念和指令"
 subtitle:     "常用docker指令整理"
 date:         2018-09-05 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018/2018-09/head-top-1.jpg"
+header-img:   "img/cover/head-top-14.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false

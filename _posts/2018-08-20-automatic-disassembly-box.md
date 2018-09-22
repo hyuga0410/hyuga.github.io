@@ -4,7 +4,7 @@ title:        "Java的自动拆装箱"
 subtitle:     "归纳自动拆装箱知识点"
 date:         2018-08-20 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018/2018-08/head-top-3.jpeg"
+header-img:   "img/cover/head-top-4.jpeg"
 header-mask:  0.3
 catalog:      true
 multilingual: false

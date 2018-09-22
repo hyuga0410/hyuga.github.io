@@ -4,7 +4,7 @@ title:        "command-search-alfred神器"
 subtitle:     "一款alfred插件工具，指令管理神器"
 date:         2018-08-21 15:42:05
 author:       "Hyuga"
-header-img:   "img/2018/2018-08/head-top-4.jpg"
+header-img:   "img/cover/head-top-5.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false

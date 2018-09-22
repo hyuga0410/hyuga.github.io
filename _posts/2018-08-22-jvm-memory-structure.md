@@ -4,7 +4,7 @@ title:        "JVM系列之JVM内存结构"
 subtitle:     "详解Java虚拟机运行时内存结构"
 date:         2018-08-22 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018/2018-08/head-top-5.jpg"
+header-img:   "img/cover/head-top-7.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false

@@ -4,7 +4,7 @@ title:        "浅析Synchronized与ReentrantLock"
 subtitle:     "分析Synchronized与ReentrantLock的区别以及锁相关的一些概念"
 date:         2018-08-30 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018/2018-08/head-top-8.jpg"
+header-img:   "img/cover/head-top-13.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false

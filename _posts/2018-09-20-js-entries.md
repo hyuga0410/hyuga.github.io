@@ -4,7 +4,7 @@ title:        "原生JS对象方法Object.entries(obj)"
 subtitle:     "简单记录下js的几个对象扩展方法"
 date:         2018-09-20 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018/2018-09/head-top-6.jpg"
+header-img:   "img/cover/head-top-20.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false

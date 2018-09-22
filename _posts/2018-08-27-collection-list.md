@@ -4,7 +4,7 @@ title:        "Java集合类List详解"
 subtitle:     "剖析Java集合类List特性"
 date:         2018-08-27 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018/2018-08/head-top-9.jpg"
+header-img:   "img/cover/head-top-10.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false

@@ -4,7 +4,7 @@ title:        "Java线程池知识点"
 subtitle:     "详解java线程池的特性以及优劣"
 date:         2018-08-28 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018/2018-08/head-top-7.jpg"
+header-img:   "img/cover/head-top-12.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false

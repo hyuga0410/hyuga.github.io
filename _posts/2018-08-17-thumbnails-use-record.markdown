@@ -4,7 +4,7 @@ title:        "google Thumbnails使用简介"
 subtitle:     "一个极方便创建略缩图的工具包"
 date:         2018-08-17 17:42:05
 author:       "Hyuga"
-header-img:   "img/2018/2018-08/head-top-1.jpg"
+header-img:   "img/cover/head-top-2.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false

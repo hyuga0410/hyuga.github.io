@@ -4,7 +4,7 @@ title:        "并发、锁的一些概念"
 subtitle:     "浅显整合一些并发、锁相关的知识点"
 date:         2018-08-27 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018/2018-08/head-top-7.jpg"
+header-img:   "img/cover/head-top-11.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false

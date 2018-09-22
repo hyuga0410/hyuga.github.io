@@ -4,7 +4,7 @@ title:        "IDEA自用插件列表归类"
 subtitle:     "自用的Intellij IDEA插件列表分享"
 date:         2018-09-10 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018/2018-09/head-top-3.jpg"
+header-img:   "img/cover/head-top-16.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false

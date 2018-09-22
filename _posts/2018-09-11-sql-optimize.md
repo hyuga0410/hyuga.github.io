@@ -4,7 +4,7 @@ title:        "MySQL的一些小优化"
 subtitle:     "一些优化建议和sql执行计划"
 date:         2018-09-11 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018/2018-09/head-top-4.jpg"
+header-img:   "img/cover/head-top-17.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false

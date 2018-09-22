@@ -4,7 +4,7 @@ title:        "Docker安装过程记录"
 subtitle:     "学习docker安装使用过程记录"
 date:         2018-08-23 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018/2018-08/head-top-6.jpg"
+header-img:   "img/cover/head-top-9.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false

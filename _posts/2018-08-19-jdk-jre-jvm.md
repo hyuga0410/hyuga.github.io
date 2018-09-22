@@ -4,7 +4,7 @@ title:        "浅出JDK、JRE和JVM三者概念"
 subtitle:     "浅显分析JDK、JRE和JVM三者关系"
 date:         2018-08-19 10:42:05
 author:       "Hyuga"
-header-img:   "img/2018/2018-08/head-top-2.jpg"
+header-img:   "img/cover/head-top-3.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false

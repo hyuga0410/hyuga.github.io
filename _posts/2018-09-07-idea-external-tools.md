@@ -4,7 +4,7 @@ title:        "IDEA之External Tools分享"
 subtitle:     "Intellij IDEA的外部工具配置分享"
 date:         2018-09-07 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018/2018-09/head-top-2.jpg"
+header-img:   "img/cover/head-top-15.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false

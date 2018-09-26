@@ -12,6 +12,10 @@ tags:
     - god road
 ---
 
+https://www.cnblogs.com/xiaoxi/p/7233201.html
+
+https://www.cnblogs.com/qiumingcheng/p/5259892.html
+
 ## 前言
 
 Map是Java很常用的一个集合，不同于List的单列线性集合，Map是一种双列映射的存储结合。

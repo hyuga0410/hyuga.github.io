@@ -42,16 +42,50 @@ map的特点：
 - ConcurrentHashMap：线程安全，在加锁粒度上比HashTable要细，性能会更好一些。
 
 ## HashMap
-继承关系：`class HashMap<K,V> extends AbstractMap<K,V> implements Map<K,V>, Cloneable, Serializable`
-K-V-NULL：只允许一个key为null，可以有一个或者多个value为null。
-是否安全：`非线程安全`，要转成线程安全可使用Collections.synchronizedMap(map)（生成代理类，方法都加上synchronized，类似HashTable）
-
--
--
+- 继承关系：`class HashMap<K,V> extends AbstractMap<K,V> implements Map<K,V>, Cloneable, Serializable`
+- K-V-NULL：只允许一个key为null，可以有一个或者多个value为null。
+- 是否安全：`非线程安全`，要转成线程安全可使用Collections.synchronizedMap(map)（生成代理类，方法都加上synchronized，类似HashTable）
 - 初始容量：hash数组初始化默认大小是16，而且一定是2的指数。负载因子是0.75，扩容公式是：当元素数量达到阈值(当前容量*0.75)，则原容量*2
 - 哈希值的使用：HashMap是hash对key的hashcode进行了二次hash，以获得更好的散列值。
 - 底层结构：JDK1.8对HashMap进行了比较大的优化，底层实现由之前的`数组+链表`改为`数组+链表+红黑树`
 
+![](../img/2018/2018-09/map-hashmap-jdk7.png)
+![](../img/2018/2018-09/map-hashmap-jdk8.png)
+jdk7和jdk8中HashMap结构的最大区别就是引入了红黑树，当table中某一格的单链表超过8位长度，就重新计算hash转成红黑树结构存储。
+
+HashMap每个键值对是怎么存储的?
+- 初始HashMap有16格`transient Node<K,V>[] table;`
+- 计算K的hash值，put(K, V)源码可见`(key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16)`
+- 将K, V封装成Node对象，按hash值存储到对应的table中的某一格，数组存储模式
+- 当出现不同的K值，但是计算生成的hash值一样时，会放到同一格，并采用链表LinkedHashMap存储
+- 当同一格的链表节点超过8个，则单格的链表采用红黑树进行存储
+- 扩容的时候，会对整个HashMap重新计算hash进行存储
+
+关于JDK1.8的HashMap源码分析，有一篇很好的文章 [JDK1.8 HashMap源码分析](https://www.cnblogs.com/xiaoxi/p/7233201.html)
+
+**HashMap是线程不安全的，会导致什么情况？**
+- 假设多个线程同时put，且刚好都触发了扩容，同时进入了transfer方法。
+- 极端情况下有可能形成循环链表
+
+**线程不安全是因为扩容，那么扩容到底做了什么？**
+
+HashMap的一些参数：
+- Capacity：HashMap的当前长度，HashMap的长度是2的幂。
+- LoadFactor：HashMap负载因子，默认值为0.75f。
+- 扩容条件：HashMap.Size >= Capacity * LoadFactor
+
+其实这个并发问题就是HashMap的resize()并发导致的问题，下面说说什么是resize()以及resize()做了啥。
+
+- 每当触发扩容，会执行resize()
+- 创建一个新的Entry空数组，长度是
+
+
+
+
+
+程序猿小灰这篇文章了解下！！！
+
+[漫画：高并发下的HashMap](https://mp.weixin.qq.com/s?__biz=MzI2NjA3NTc4Ng==&mid=2652079766&idx=1&sn=879783e0b0ebf11bf1a5767933d4e61f&chksm=f1748d73c6030465fe6b9b3fa7fc816d4704c91bfe46cb287aefccee459153d3287172d91d23&scene=21#wechat_redirect%20---------------------%20%E6%9C%AC%E6%96%87%E6%9D%A5%E8%87%AA%20walkerchi%20%E7%9A%84CSDN%20%E5%8D%9A%E5%AE%A2%20%EF%BC%8C%E5%85%A8%E6%96%87%E5%9C%B0%E5%9D%80%E8%AF%B7%E7%82%B9%E5%87%BB%EF%BC%9Ahttps://blog.csdn.net/chisunhuang/article/details/79041656?utm_source=copy)
 
 ## TreeMap
 `非线程安全``fail-fast``key有序`

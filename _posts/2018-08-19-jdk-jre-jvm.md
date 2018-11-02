@@ -1,6 +1,6 @@
 ---
 layout:       post
-title:        "浅出JDK、JRE和JVM三者概念"
+title:        "[JVM] 浅出JDK、JRE和JVM三者概念"
 subtitle:     "浅显分析JDK、JRE和JVM三者关系"
 date:         2018-08-19 10:42:05
 author:       "Hyuga"

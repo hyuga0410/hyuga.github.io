@@ -20,23 +20,27 @@ Git远程仓库更改路径后，导致本地项目对应不上，本地代码�
 其实，只需要更新本地项目的git地址即可完成同步操作！！！
 
 # 步骤
-终端进入项目路径，执行git remote -v
+- 终端进入项目路径，执行git remote -v
 
 ![](/img/2018/2018-11/git-1.png)
 
 ![](/img/2018/2018-11/git-2.png)
 
-如果origin对应的地址不是新的项目git地址，执行git remote remove origin，移除项目git地址配置
+- 这时会发现origin对应的地址不是新的项目git地址，执行git remote remove origin，移除项目git地址配置
 
-再添加新的地址git remote add origin http://git.xxx.com/xxxx/xxxx-xxxx-services.git
+- 添加新的地址git remote add origin http://git.xxx.com/xxxx/xxxx-xxxx-services.git
 
-执行git fetch 
+- 执行git fetch 
 
-执行 git branch --set-upstream-to=origin/master master
+- 执行 git branch --set-upstream-to=origin/master master
 
-执行git pull
+- 执行git pull
 
+好了，就这么简单，这是更新本地主分支地址的方法，记录下以备不时之需。
 
-
-查看git配置列表：git config --list
-git status
+# 常规命令
+- git config --global user.name "[username]"
+- git config --global user.email "[email]"
+- git config --global http.proxy [proxy url:port]
+- 查看git配置列表：git config --list
+- git status

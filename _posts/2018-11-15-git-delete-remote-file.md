@@ -21,9 +21,9 @@ tags:
 举个栗子：git删除远程.idea目录
 
 - 进入项目路径，切换到对应的版本
-- git rm --cached -r .idea
-- git commit -m "commit and remove .idea"
-- git push origin master（或者分支：git push origin dev_xxxx）
+- `git rm --cached -r .idea`
+- `git commit -m "commit and remove .idea"`
+- `git push origin master`（或者分支：git push origin dev_xxxx）
 
 
 # 常规命令

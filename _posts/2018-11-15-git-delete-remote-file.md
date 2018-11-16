@@ -2,7 +2,7 @@
 layout:       post
 title:        "Git远程仓库文件删除"
 subtitle:     "删除远程git仓库的文件方法"
-date:         2018-11-05 22:42:05
+date:         2018-11-15 22:42:05
 author:       "Hyuga"
 header-img:   "img/cover/head-top-26.jpg"
 header-mask:  0.3

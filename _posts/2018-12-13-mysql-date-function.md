@@ -169,10 +169,11 @@ SELECT STR_TO_DATE('2018-12-11 23:59:59', '%Y-%m-%d %H:%i:%s');
 #### TIMESTAMPDIFF
 
 > TIMESTAMPDIFF函数，有参数设置，可以精确到天（DAY）、小时（HOUR），分钟（MINUTE）和秒（SECOND），使用起来比datediff函数更加灵活。对于比较的两个时间，时间小的放在前面，时间大的放在后面。
->
+
 > 语法：TIMESTAMPDIFF(interval, datetime_expr1, datetime_expr2)
->
+
 > 结果：返回（时间2-时间1）的时间差，结果单位由interval参数给出。
+
 **DEMO**
 
 {% highlight sql %}
@@ -199,9 +200,9 @@ SELECT TIMESTAMPDIFF(YEAR,'2012-10-01','2013-01-13'); # 0
 #### DATEDIFF
 
 > datediff函数，返回值是相差的天数，不能定位到小时、分钟和秒。
->
+
 > datediff(datetime_expr1, datetime_expr2)
->
+
 > 传入两个日期参数，比较DAY天数，第一个参数减去第二个参数的天数值。
 
 {% highlight sql %}
@@ -214,9 +215,9 @@ SELECT DATEDIFF('2015-04-22 00:00:00', '2015-04-20 23:59:00');
 
 #### TIMESTAMPADD
 > TIMESTAMPADD(interval,int_expr,datetime_expr)
->
+
 > 将整型表达式int_expr 添加到日期或日期时间表达式 datetime_expr中。式中的interval和上文中列举的取值是一样的。
->
+
 > 可用于时间增量
 
 {% highlight sql %}
@@ -232,7 +233,7 @@ SELECT TIMESTAMPADD(SECOND,60,'2018-12-11 09:00:00');
 
 #### DATE_ADD
 > 日期加法
->
+
 > DATE_ADD(date,INTERVAL expr type)
 
 {% highlight sql %}
@@ -249,7 +250,7 @@ SELECT DATE_ADD(NOW(), INTERVAL 2 MICROSECOND);
 
 #### DATE_SUB
 > 日期减法
->
+
 > DATE_SUB(date,INTERVAL expr type)
 
 {% highlight sql %}

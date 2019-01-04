@@ -67,10 +67,10 @@ Cron表达式的格式：**秒 分 时 日 月 周 年(可选)**
 </table>
 
 **月份**
-- [1-12] or [JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC]
+- 【1-12】or【JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC】
 
 **周**
-- [1-7] or [SUN, MON, TUE, WED, THU, FRI, SAT]
+- 【1-7】or【SUN, MON, TUE, WED, THU, FRI, SAT】
 
 注意：个别子表达式可以是范围或者列表。具体如下！
 

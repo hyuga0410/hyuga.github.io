@@ -114,16 +114,16 @@ public class CoordinateCalculationUtil {
 
 ```
 select *
-        from t_garden_basic t
-        where
-          (t.flongitude >= '114.01586699540523' and t.flongitude <= '114.11323700459478'
-           and t.flatitude >= '22.503492693299975' and t.flatitude <= '22.593419306700028')
+from t_garden_basic t
+where
+  (t.flongitude >= '114.01586699540523' and t.flongitude <= '114.11323700459478'
+   and t.flatitude >= '22.503492693299975' and t.flatitude <= '22.593419306700028')
 
-          or (t.flongitude >= '114.01586699540523' and t.flongitude <= '114.11323700459478'
-              and t.flatitude >= '22.503492693299975' and t.flatitude <= '22.593419306700028')
+  or (t.flongitude >= '114.01586699540523' and t.flongitude <= '114.11323700459478'
+      and t.flatitude >= '22.503492693299975' and t.flatitude <= '22.593419306700028')
 
-          or (t.flongitude >= '114.01586699540523' and t.flongitude <= '114.11323700459478'
-              and t.flatitude >= '22.503492693299975' and t.flatitude <= '22.593419306700028');
+  or (t.flongitude >= '114.01586699540523' and t.flongitude <= '114.11323700459478'
+      and t.flatitude >= '22.503492693299975' and t.flatitude <= '22.593419306700028');
 ```
 
 这种方式也许不是当前场景下的最优方案，但相对于第一种，也算是比较符合的了。

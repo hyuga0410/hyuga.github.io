@@ -114,7 +114,7 @@ public class CoordinateCalculationUtil {
 
 ```
 select *
-        from syzl_garden.t_garden_basic t
+        from t_garden_basic t
         where
           (t.flongitude >= '114.01586699540523' and t.flongitude <= '114.11323700459478'
            and t.flatitude >= '22.503492693299975' and t.flatitude <= '22.593419306700028')
@@ -127,6 +127,36 @@ select *
 ```
 
 这种方式也许不是当前场景下的最优方案，但相对于第一种，也算是比较符合的了。
+
+附带贴下第一种方式的实现逻辑：
+
+```
+赤道半径：6378.137km
+查询结果为km
+SELECT id,(
+6378.137 * 2 * ASIN(
+    SQRT(
+        POW(
+            SIN(
+                (
+                    RADIANS(当前纬度latitude)- RADIANS(数据库中存储的目标纬度latitude)
+                )/ 2
+            ),
+            2
+        )+ COS(RADIANS(当前纬度latitude))* COS(RADIANS(数据库中存储的目标纬度latitude))* POW(
+            SIN(
+                (
+                    RADIANS(当前经度longitude)- RADIANS(数据库中存储的目标经度longitude)
+                )/ 2
+            ),
+            2
+        )
+    )
+)
+) AS distance FROM tablename
+```
+
+以上实现来自：[Mysql sql 计算两个坐标之间的距离](https://crabdave.iteye.com/blog/2301497)
 
 # 参考资料
 [Java,Mysql-根据一个给定经纬度的点，进行附近500米地点查询–合理利用算法](https://www.cnblogs.com/zt007/p/6373722.html)

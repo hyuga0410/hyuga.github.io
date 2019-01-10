@@ -55,5 +55,5 @@ open /Users/xxx/Downloads/test.txt
 
 # 成果
 
-[](/_file/文件快捷定位.alfredworkflow)
+[文件快捷定位.alfredworkflow](/_file/文件快捷定位.alfredworkflow)
 

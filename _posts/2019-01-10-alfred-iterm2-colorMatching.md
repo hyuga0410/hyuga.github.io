@@ -15,7 +15,7 @@ tags:
 # 前言
 个人完全是用ITerm2代替了mac自带的终端，支持各种个性化定制，做完配色后，使用起来更舒服。
 
-教程来源，感谢作者分享 - [ITerm2配色方案](https://www.jianshu.com/p/33deff6b8a63)
+教程来自简书，非常感谢作者【Bill_Wang】分享 - [ITerm2配色方案](https://www.jianshu.com/p/33deff6b8a63)
 
 下面介绍下配置步骤。
 
@@ -59,9 +59,9 @@ set ruler
 
 #### 设置ITerm2主题
 如下操作：
-`iTerm2->Preferences->Profiles->Color` 选择 `Color Presets->import` 到下载好的主题目录下schemes目录下选择你要的主题导入。
+`iTerm2->Preferences->Profiles->Color` 选择 `Color Presets->import` 到下载并解压好的主题目录下schemes目录下选择你要的主题导入。
 
-schemes目录下有所有下载下来的主题文件，选中你要想要的主题导入即可。
+schemes目录下包含了所有下载下来的主题文件，选中你要想要的主题导入即可。
 
 文件地址：`/Users/xxx/Downloads/mbadolato-iTerm2-Color-Schemes-7e1c743/schemes/Solarized\ Dark\ Higher\ Contrast.itermcolors`
 
@@ -74,6 +74,8 @@ schemes目录下有所有下载下来的主题文件，选中你要想要的主�
 主题效果如下！
 
 ![](/img/2019/2019-01/iterm-2.png)
+
+如果设置后无效，建议关掉ITerm2，然后重下ITerm2试试。
 
 
 

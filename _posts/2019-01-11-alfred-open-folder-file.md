@@ -53,7 +53,4 @@ open /Users/xxx/Downloads/test.txt
 - 快捷键`⌘ + ⌥ + O`
 - 搞定！！！
 
-# 成果
-
-[文件快捷定位.alfredworkflow](/_file/文件快捷定位.alfredworkflow)
 

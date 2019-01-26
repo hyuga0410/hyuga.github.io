@@ -4,7 +4,7 @@ title:        "Mysql获取首字母大写函数、随机数生成"
 subtitle:     "Mysql非常用函数记录"
 date:         2019-01-26 15:42:05
 author:       "Hyuga"
-header-img:   "img/cover/head-top-16.jpg"
+header-img:   "img/cover/head-top-20.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false

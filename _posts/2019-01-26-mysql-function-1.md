@@ -76,13 +76,15 @@ END$$
 DELIMITER ;
 {% endhighlight %}
 
-- 栗子咯
-```
+- 函数执行
+将上面两个函数的数据库名改正后执行生成函数！
+
+{% highlight java %}
 select
   concat(firstconcat(t.froom_no), date_format(t.frent_time, '%m%d%H%m%s'), (SELECT CEILING(RAND()*900+100))) 'no',
   t.fid 'id'
 from t_room_back t
-```
+{% endhighlight %}
 
 # 生成随机数
 
@@ -97,7 +99,6 @@ from t_room_back t
 - 生成 4 位的随机数 `SELECT CEILING(RAND() * 9000 + 1000);`
 - 生成 5 位的随机数 `SELECT CEILING(RAND() * 90000 + 10000);`
 
-**注：**
 ```
 select rand() from dual;
 echo: 0.5969879996003471

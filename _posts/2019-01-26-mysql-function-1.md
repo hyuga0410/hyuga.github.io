@@ -18,6 +18,7 @@ tags:
 试过多种方案后，推荐下面的方法，亲测可用。
 
 获取首字母函数教程来源：[MySQL中文取首字母实现](https://blog.csdn.net/zane3/article/details/77504673)
+生成随机数函数教程来源：[mysql生成指定位数的随机数](https://blog.csdn.net/zhou520yue520/article/details/82882994)
 
 # 栗子
 
@@ -86,7 +87,7 @@ from t_room_back t
 # 生成随机数
 
 > 函数
-- RAND()     随机生成 0~1 之间的小数（0<1）
+- RAND()     随机生成 0~1 之间的小数
 - CEILING()  向上取整
 - FLOOR()    向下取整
 

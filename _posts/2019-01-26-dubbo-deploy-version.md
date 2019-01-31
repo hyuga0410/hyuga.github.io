@@ -38,7 +38,7 @@ xml配置文件注入方式
 
 > 注意
 
-一图中的syzl.dubbo.yfb.version不能删除，只能是`syzl.dubbo.yfb.version=`
+一图中的syzl.dubbo.yfb.version可以配置对应的版本号，但是不能删除key，如果当前环境不需要版本号，只能是`syzl.dubbo.yfb.version=`
 
 如果删除，会导致服务启动失败，因为找不到这个配置的key。
 

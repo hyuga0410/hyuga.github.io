@@ -24,15 +24,15 @@ tags:
 
 改用`git clone ssh://xxxxxxxxx`方案。
 
-![](../img/2019/2019-03/aliyun-problem-1.png)
+![](/img/2019/2019-03/aliyun-problem-1.png)
 
 打开本机终端，执行`cat ~/.ssh/id_rsa.pub`得到如下代码段。
 
-![](../img/2019/2019-03/aliyun-problem-3.png)
+![](/img/2019/2019-03/aliyun-problem-3.png)
 
 录入到阿里云的SSH keys中。
 
-![](../img/2019/2019-03/aliyun-problem-2.png)
+![](/img/2019/2019-03/aliyun-problem-2.png)
 
 这时，就可以在本地终端中拉取源码`git clone -b dev_v1.0.xxx https://code.aliyun.com/xxx-xxx/xxx-xxx-xxx.git`
 

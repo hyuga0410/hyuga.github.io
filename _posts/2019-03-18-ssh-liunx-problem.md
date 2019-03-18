@@ -46,6 +46,11 @@ tags:
 
 经过检查发现本地拉取，是通过22端口，而测试环境拉取是通过9988端口。
 
+`ssh -vT git@git.coding.net`
+
+提示连接端口是9988，而本地连接端口是22.
+
+
 {% highlight java %}
 [root@238 test]# git clone  git@code.aliyun.com:syzl-business/syzl-micro-services.git
 Initialized empty Git repository in /data/www/test/syzl-micro-services/.git/

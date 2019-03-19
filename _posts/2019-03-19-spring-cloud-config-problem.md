@@ -17,7 +17,7 @@ tags:
 
 需要变更配置方式，使用jenkins git clone阿里云code，一开始各种碰壁，最终解决clone问题。
 
-详见上一篇文章：【阿里云Code git clone ssh方式】
+详见上一篇文章：[【阿里云Code git clone ssh方式】](http://hyuga.top/2019/03/18/ssh-liunx-problem/)
 
 接下来就是要更改Spring Cloud config的配置，接下来开始领略跳坑的风采。
 

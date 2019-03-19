@@ -159,7 +159,7 @@ cat ~/.ssh/id_rsa.pub
 你可以按如下命令来生成ssh key：
 
 {% highlight java %}
-ssh-keygen -t rsa -C "user0410@163.com"
+ssh-keygen -t rsa -C "user0000@163.com"
 {% endhighlight %}
 
 这个指令会要求你提供一个位置和文件名去存放键值对和密码，你可以不输入新的位置和文件名，直接点击Enter键会覆盖原id_rsa.pub和id_rsa文件。
@@ -176,6 +176,6 @@ cat ~/.ssh/id_rsa.pub
 
 至此，就可以在本机或测试环境拉取阿里云CODE源码了。
 
-git clone ssh://git@code.aliyun.com:22/xxx-config-rep.git
+`git clone ssh://git@code.aliyun.com:22/xxx-config-rep.git`
 
 ![](/img/2019/2019-03/springcloud-config-1.png)

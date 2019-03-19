@@ -92,6 +92,8 @@ spring:
 
 最终放弃这种方案。
 
+[Git SSH configuration using properties 官网配置](https://cloud.spring.io/spring-cloud-static/Edgware.SR5/single/spring-cloud.html#_git_ssh_configuration_using_properties)
+
 ## 物理空间访问
 没办法，最后采取把配置文件pull到测试环境/data/www/config-repo文件夹下，SpringCloud-config读取该文件夹下的配置文件。
 

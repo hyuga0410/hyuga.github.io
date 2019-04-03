@@ -34,7 +34,7 @@ export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
 #sets up theprompt color (currently a green similar to linux terminal)
-export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ ==> '
+export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ --> '
 #enables colorfor iTerm
 export TERM=xterm-256color
 {% endhighlight %}
@@ -78,6 +78,16 @@ schemes目录下包含了所有下载下来的主题文件，选中你要想要�
 ![](/img/2019/2019-01/iterm-2.png)
 
 如果设置后无效，建议关掉ITerm2，然后重下ITerm2试试。
+
+#### 设置
+新安装的iTerm `vim xxx.sh`编辑脚本时，无法通过鼠标滚动
+
+`sudo vi ~/.vimrc` 
+
+在 `~/.vimrc` 中添加这个指令:
+
+`set mouse=a`
+
 
 
 

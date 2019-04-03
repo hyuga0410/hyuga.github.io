@@ -34,10 +34,12 @@ export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
 #sets up theprompt color (currently a green similar to linux terminal)
-export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$     '
+export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ ==> '
 #enables colorfor iTerm
 export TERM=xterm-256color
 {% endhighlight %}
+
+执行`source ~/.bash_profile`使配置生效。
 
 #### 设置vim可配色
 ITerm2终端输入 `vim .vimrc`

@@ -43,7 +43,7 @@ export TERM=xterm-256color
 ITerm2终端输入 `vim .vimrc`
 
 贴入以下代码段！
-
+ 
 {% highlight java %}
 syntax on
 set number

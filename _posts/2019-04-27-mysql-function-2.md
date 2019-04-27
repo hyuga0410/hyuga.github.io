@@ -1,6 +1,6 @@
 ---
 layout:       post
-title:        "Mysql获取首字母大写函数、随机数生成"
+title:        "Mysql获取字符串中的数字函数"
 subtitle:     "Mysql非常用函数记录"
 date:         2019-04-27 15:42:05
 author:       "Hyuga"

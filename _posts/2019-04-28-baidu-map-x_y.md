@@ -22,7 +22,7 @@ tags:
 一时没能想起是从哪个博主处抄来的，如果侵权，请联系处理，谢谢。
 
 # 工具类
-{% highlight java %}
+```java
 public class CoordinateTransformUtil {
 
     private CoordinateTransformUtil() {
@@ -120,4 +120,4 @@ public class CoordinateTransformUtil {
         return new LngLat(dataDigit(6, z * cos(theta)), dataDigit(6, z * sin(theta)));
     }
 }
-{% endhighlight %}
+```

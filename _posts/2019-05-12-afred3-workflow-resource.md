@@ -1,10 +1,10 @@
 ---
 layout:       post
-title:        "Tomcat技巧"
-subtitle:     "tomcat使用过程中遇到的一些问题和小技巧记录"
-date:         2019-05-10 18:42:05
+title:        "Alfred3 workflow资源推荐"
+subtitle:     "Alfred3 workflow资源收集"
+date:         2019-05-12 18:42:05
 author:       "Hyuga"
-header-img:   "img/cover/head-top-22.jpg"
+header-img:   "img/cover/head-top-15.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
@@ -21,5 +21,6 @@ alfred3是啥就不阐述了。
 
 以下排名不分先后！！！
 
+- About This Mac
 - Kill Process
 - ip Address

@@ -53,39 +53,44 @@ set JRE_HOME=D:\Program Files\Java\jdk7\jre7
 上述内容来自：[http://www.cnblogs.com/teach/p/6086867.html](http://www.cnblogs.com/teach/p/6086867.html)
 
 ## 配置tomcat启动端口
-1. vim conf/server.xml
-2. 找到如下代码！
-```xml
+- vim conf/server.xml
+- 找到如下代码！
+
+{% highlight xml %}
 <Connector port="8080" protocol="HTTP/1.1"
                connectionTimeout="20000"
                redirectPort="8443" />
-```
-3. 把8080改成你想要的端口号就好了！
+{% endhighlight %}
+
+- 把8080改成你想要的端口号就好了！
 
 ## 直接通过域名访问
 
 > Tomcat部署web项目,如何直接通过域名访问,不加项目名称
 
-1. vim conf/server.xml
-2. 找到如下代码！
-```xml
+- vim conf/server.xml
+- 找到如下代码！
+
+{% highlight xml %}
 <Host appBase="webapps">
-
  .....
-
 </Host>
-```
-3. 在Host标签中假如如下元素
-```xml
+{% endhighlight %}
+
+- 在Host标签中假如如下元素
+
+{% highlight xml %}
 <Context path="" reloadable="false" docBase="dubbo-monitor"/>
-```
+
 dubbo-monitor是webapps目录下的文件目录名，也就是要启动的项目名
-4. 如果上面的方式无效，就改用全路径
-```xml
+{% endhighlight %}
+
+- 如果上面的方式无效，就改用全路径
+{% highlight xml %}
 <Context path="" reloadable="false" docBase="/opt/tomcat-dubbo-monitor/webapps/dubbo-monitor"/>
-```
+{% endhighlight %}
 5. 搞定，最终配置如下！
-```xml
+{% highlight xml %}
 <Host name="localhost"  appBase="webapps" unpackWARs="true" autoDeploy="true">
 
 <Context path="" reloadable="false" docBase="dubbo-monitor"/>
@@ -104,4 +109,4 @@ dubbo-monitor是webapps目录下的文件目录名，也就是要启动的项目
        pattern="%h %l %u %t &quot;%r&quot; %s %b" />
 
 </Host>
-```
+{% endhighlight %}

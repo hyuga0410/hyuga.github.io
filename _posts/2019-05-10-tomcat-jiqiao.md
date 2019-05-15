@@ -51,3 +51,57 @@ set JRE_HOME=D:\Program Files\Java\jdk7\jre7
 **这两种方式使用任何一种都可以实现修改tomcat的依赖JDK环境，同时可以不配置JDK的环境变量。**
 
 上述内容来自：[http://www.cnblogs.com/teach/p/6086867.html](http://www.cnblogs.com/teach/p/6086867.html)
+
+## 配置tomcat启动端口
+1. vim conf/server.xml
+2. 找到如下代码！
+```xml
+<Connector port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+```
+3. 把8080改成你想要的端口号就好了！
+
+## 直接通过域名访问
+
+> Tomcat部署web项目,如何直接通过域名访问,不加项目名称
+
+1. vim conf/server.xml
+2. 找到如下代码！
+```xml
+<Host appBase="webapps">
+
+ .....
+
+</Host>
+```
+3. 在Host标签中假如如下元素
+```xml
+<Context path="" reloadable="false" docBase="dubbo-monitor"/>
+```
+dubbo-monitor是webapps目录下的文件目录名，也就是要启动的项目名
+4. 如果上面的方式无效，就改用全路径
+```xml
+<Context path="" reloadable="false" docBase="/opt/tomcat-dubbo-monitor/webapps/dubbo-monitor"/>
+```
+5. 搞定，最终配置如下！
+```xml
+<Host name="localhost"  appBase="webapps" unpackWARs="true" autoDeploy="true">
+
+<Context path="" reloadable="false" docBase="dubbo-monitor"/>
+
+<!-- SingleSignOn valve, share authentication between web applications
+     Documentation at: /docs/config/valve.html -->
+<!--
+<Valve className="org.apache.catalina.authenticator.SingleSignOn" />
+-->
+
+<!-- Access log processes all example.
+     Documentation at: /docs/config/valve.html
+     Note: The pattern used is equivalent to using pattern="common" -->
+<Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+       prefix="localhost_access_log" suffix=".txt"
+       pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+
+</Host>
+```

@@ -26,20 +26,19 @@ tags:
 - `ctrl + f`：光标向后移动一格
 - `ctrl + w`：删除一个段连续的文本（以空格隔开的字符串）
 
-## 日志
+## 实时查看日志
 
-> 实时查看日志
+`tail -f filename.log`
 
-- `tail -f filename.log`
-- `tail -f -n 100 filename.log`
+`tail -f -n 100 filename.log`
 
-> 查看文件内容
+## 查看文件内容
 
-- `less filename.log`
+`less filename.log`
 
-# 查看进程运行时间
+## 查看进程运行时间
 
-- `ps -p (pid) -o lstart,etime`
+`ps -p (pid) -o lstart,etime`
 
 ```
 $ ps -p 24525 -o lstart,etime 
@@ -49,64 +48,64 @@ Sat Mar 23 20:52:08 2019       02:45
 
 其中24525是你要查看进程的进程id。
 
-# 屏幕冻结
+## 屏幕冻结
 
-> 非常优秀的功能，tail -f 查看实时日志时，可以冻结屏幕查看日志
+非常优秀的功能，tail -f 查看实时日志时，可以冻结屏幕查看日志
 
-- `ctrl + s` 冻结屏幕
-- `ctrl + q` 退出冻结
+`ctrl + s` 冻结屏幕
 
-# 查看内容占用前10的进程
-- `$ ps -aux|sort -k4nr |head -n 10`
+`ctrl + q` 退出冻结
 
-# 查看目录磁盘空间大小
+## 查看内容占用前10的进程
 
-- `du -h --max-depth=1`
+`$ ps -aux|sort -k4nr |head -n 10`
+
+## 查看目录磁盘空间大小
+
+`du -h --max-depth=1`
 
 `--max-depth` 目录深度
 
-# 显示各挂载点空间
+## 显示各挂载点空间
 
-- `df -h`
+`df -h`
 
-# 显示内存可用情况
+## 显示内存可用情况
 
-- `free -h`
+`free -h`
 
-# find找到某一文件的目录
+## find找到某一文件的目录
 
-- `find $PWD -name "server.xml"`
+`find $PWD -name "server.xml"`
 
 `$PWD` 目录，如/opt/
 
-# 删除带某个字符串以外的文件
+## 删除带某个字符串以外的文件
 
-- `rm -v !(*mts*)`
+`rm -v !(*mts*)`
 
-# 递归列出目录下的所有文件名
+## 递归列出目录下的所有文件名
 
-- `ls -lR |grep '^-' |awk '{print "/LTE/"$9}'`
+`ls -lR |grep '^-' |awk '{print "/LTE/"$9}'`
 
-    - `-R` 递归目录
-    - `^-` 文件（文件以-开头）
-    - `$9` 文件名
+- `-R` 递归目录
+- `^-` 文件（文件以-开头）
+- `$9` 文件名
 
-# 计算目录下的文件数量
+## 计算目录下的文件数量
 
-- `ls -lR |grep '^-'|wc -l`
+`ls -lR |grep '^-'|wc -l`
 
-# 文件编码格式转码
+## 文件编码格式转码
 
-- `iconv -f gb18030  -t utf8 1.txt -o 2.txt`
+`iconv -f gb18030  -t utf8 1.txt -o 2.txt`
 
-    - gb18030是windows上文件的编码
-    - utf8是linux上文件的默认编码格式
-    - 1.txt是需要转换的文件
-    - 2.txt是转换后的结果
+- gb18030是windows上文件的编码
+- utf8是linux上文件的默认编码格式
+- 1.txt是需要转换的文件
+- 2.txt是转换后的结果
 
-# ls
-
-> 列出当前目录文件名
+## 列出当前目录文件名
 
 ```
 ls   #列出当前目录文件名，不包括隐藏文件，且无法看到符号链接链向的文件
@@ -116,9 +115,9 @@ ls -A #列出当前目录下所有文件，包括隐藏文件，不包括前目�
 ls -al  # 列出当前目录所有文件，并且使用长格式显示所有信息，包括权限，大小，用户，时间等，与ll作用相同
 ```
 
-> 设置全局快捷命令
+## 设置全局快捷命令
 
-- `vim ~/.bash_profile`
+`vim ~/.bash_profile`
 
 设置。。。
 
@@ -153,9 +152,9 @@ ls -al  # 列出当前目录所有文件，并且使用长格式显示所有信�
  alias jdk10='export JAVA_HOME=$JAVA_10_HOME'
 ```
 
-> 以易读方式列出当前目录文件大小
+## 以易读方式列出当前目录文件大小
 
-- `ls -lh`
+`ls -lh`
 
 文件大小不以初始字节显示，而是以k或者M为单位显示。
 
@@ -170,19 +169,17 @@ lrwxrwxrwx 1 hyb  hyb     8 9月  13 21:19 test -> home.zip
 drwxrwxr-x 2 hyb  hyb  4.0K 10月 19  2017 user
 ```
 
-## 系统状态
+## 查看系统运行时间
 
-> 查看系统运行时间
-
-- `uptime`
+`uptime`
 
 ```
 14:33  up 3 days,  3:46, 5 users, load averages: 4.42 4.24 4.11
 ```
 
-> 查看系统已登录用户
+## 查看系统已登录用户
 
-- `who -a`
+`who -a`
 
 ```
 hyuga0410 console  May 13 10:47
@@ -192,9 +189,9 @@ hyuga0410 ttys003  May 14 11:44
 hyuga0410 ttys005  May 14 10:53
 ```
 
-> 查看系统版本信息
+## 查看系统版本信息
 
-- `uname -a`
+`uname -a`
 
 ```
 Linux lvs213.business 2.6.32-754.el6.x86_64 #1 SMP Tue Jun 19 21:26:04 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
@@ -202,19 +199,19 @@ Linux lvs213.business 2.6.32-754.el6.x86_64 #1 SMP Tue Jun 19 21:26:04 UTC 2018 
 
 操作系统版本为：lvs213.business，cpu类型为：x86_64
 
-> 查看当前系统环境
+## 查看当前系统环境
 
-- `export`
+`export`
 
-> 查看IP地址
+## 查看IP地址
 
-- `ip addr`
+`ip addr`
 
-> 查看网络连接状态
+## 查看网络连接状态
 
-- `netstat`
+`netstat`
 
-> 实时查看内存信息或网卡信息
+## 实时查看内存信息或网卡信息
 
 ```
 watch -n 1 cat /proc/meminfo 

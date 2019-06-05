@@ -248,3 +248,11 @@ http://blog.csdn.net/arui319/article/details/8489451
 http://blog.csdn.net/zsuguangh/article/details/6429592
 
 http://mobile.51cto.com/abased-406998.htm
+
+```
+作者：Matrix海子 　　　　 
+
+出处：http://www.cnblogs.com/dolphin0520/
+　　　　
+本博客中未标明转载的文章归作者Matrix海子和博客园共有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。
+```

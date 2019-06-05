@@ -9,12 +9,12 @@ header-mask:  0.3
 catalog:      true
 multilingual: false
 tags:
-    - java-diy
+    - java
 ---
 
 ## Java 如何有效地避免OOM：善于利用软引用和弱引用
 
-> 文章转载至[【Matrix海子】](http://www.cnblogs.com/dolphin0520/p/3784171.html)
+> 文章转载自[【Matrix海子】](http://www.cnblogs.com/dolphin0520/p/3784171.html)
 
 　　想必很多朋友对OOM（OutOfMemory）这个错误不会陌生，而当遇到这种错误如何有效地解决这个问题呢？今天我们就来说一下如何利用软引用和弱引用来有效地解决程序中出现的OOM问题。下面是本文的目录大纲：
 

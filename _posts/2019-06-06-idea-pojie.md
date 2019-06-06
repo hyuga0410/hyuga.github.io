@@ -77,6 +77,6 @@ tags:
 
 #### 参考
 
-[http://idea.lanyus.com/](https://www.jiweichengzhu.com/article/a45902a1d7284c6291fe32a4a199e65c)
+[ IntelliJ IDEA热部署插件JRebel免费激活图文教程](https://www.jiweichengzhu.com/article/a45902a1d7284c6291fe32a4a199e65c)
 
-http://idea.lanyus.com/
+http://idea.lanyus.com

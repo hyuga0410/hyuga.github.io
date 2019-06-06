@@ -18,7 +18,7 @@ tags:
 > 以下操作为Mac OS系统
 
 #### IDEA版本
-![](../img/2019/2019-06/idea-pojie-1.png)
+![](/img/2019/2019-06/idea-pojie-1.png)
 
 #### 破解包
 [下载地址](https://pan.baidu.com/s/1dY9ebfQ8BsxwV3v8_Xuuug)
@@ -37,11 +37,11 @@ tags:
 
 > 第三步
 
-![](../img/2019/2019-06/idea-pojie-3.png)
+![](/img/2019/2019-06/idea-pojie-3.png)
 
 > 第四步
 
-![](../img/2019/2019-06/idea-pojie-4.png)
+![](/img/2019/2019-06/idea-pojie-4.png)
 
 > 第七步配置信息
 
@@ -69,11 +69,11 @@ tags:
 
 > 第八步获取注册码
 
-![](../img/2019/2019-06/idea-pojie-2.png)
+![](/img/2019/2019-06/idea-pojie-2.png)
 
 #### 完成
 
-![](../img/2019/2019-06/idea-pojie-5.png)
+![](/img/2019/2019-06/idea-pojie-5.png)
 
 #### 参考
 

@@ -64,7 +64,7 @@ rewrite重定向-跳转实例)
 
 以下内容为【技术颜良】常用nginx rewrite重定向-跳转实例 内容，谢谢分享：
 
-> 将`www.myweb.com/connect` 跳转到`connect.myweb.com`
+- 将`www.myweb.com/connect` 跳转到`connect.myweb.com`
 
 {% highlight java %}
 rewrite ^/connect$ http://connect.myweb.com permanent;
@@ -72,7 +72,7 @@ rewrite ^/connect$ http://connect.myweb.com permanent;
 rewrite ^/connect/(.*)$ http://connect.myweb.com/$1 permanent;
 {% endhighlight %}
 
-> 将`connect.myweb.com` 301跳转到`www.myweb.com/connect/` 
+- 将`connect.myweb.com` 301跳转到`www.myweb.com/connect/` 
 
 {% highlight java %}
 if ($host = "connect.myweb.com"){
@@ -81,7 +81,7 @@ if ($host = "connect.myweb.com"){
 {% endhighlight %}
 
 
-> `myweb.com` 跳转到`www.myweb.com`
+- `myweb.com` 跳转到`www.myweb.com`
 
 {% highlight java %}
 if ($host != 'www.myweb.com' ) { 
@@ -89,13 +89,13 @@ if ($host != 'www.myweb.com' ) {
 }
 {% endhighlight %}
 
-> `www.myweb.com/category/123.html` 跳转为 `category/?cd=123`
+- `www.myweb.com/category/123.html` 跳转为 `category/?cd=123`
 
 {% highlight java %}
 rewrite "/category/(.*).html$" /category/?cd=$1 last;
 {% endhighlight %}
  
->  `www.myweb.com/admin/` 下跳转为`www.myweb.com/admin/index.php?s=`
+-  `www.myweb.com/admin/` 下跳转为`www.myweb.com/admin/index.php?s=`
 
 {% highlight java %}
 if (!-e $request_filename){
@@ -103,7 +103,7 @@ if (!-e $request_filename){
 }
 {% endhighlight %}
 
-> 在后面添加/index.php?s=
+- 在后面添加/index.php?s=
 
 {% highlight java %}
 if (!-e $request_filename){
@@ -111,26 +111,26 @@ if (!-e $request_filename){
 }
 {% endhighlight %}
 
->  `www.myweb.com/xinwen/123.html` 等xinwen下面数字+html的链接跳转为404
+-  `www.myweb.com/xinwen/123.html` 等xinwen下面数字+html的链接跳转为404
 
 {% highlight java %}
 rewrite ^/xinwen/([0-9]+)\.html$ /404.html last;
 {% endhighlight %}
 
->  `http://www.myweb.com/news/radaier.html` 301跳转
+-  `http://www.myweb.com/news/radaier.html` 301跳转
 `http://www.myweb.com/strategy/`
 
 {% highlight java %}
 rewrite ^/news/radaier.html http://www.myweb.com/strategy/ permanent;
 {% endhighlight %}
 
-> 重定向 链接为404页面
+- 重定向 链接为404页面
 
 {% highlight java %}
 rewrite http://www.myweb.com/123/456.php /404.html last;
 {% endhighlight %}
 
-> 禁止htaccess
+- 禁止htaccess
 
 {% highlight java %}
 location ~//.ht {
@@ -138,7 +138,7 @@ location ~//.ht {
 }
 {% endhighlight %}
 
-> 可以禁止/data/下多级目录下.log.txt等请求;
+- 可以禁止/data/下多级目录下.log.txt等请求;
 
 {% highlight java %}
 location ~ ^/data {
@@ -146,7 +146,7 @@ location ~ ^/data {
 }
 {% endhighlight %}
 
-> 禁止单个文件
+- 禁止单个文件
 
 {% highlight java %}
 location ~ /www/log/123.log {
@@ -154,14 +154,14 @@ location ~ /www/log/123.log {
 }
 {% endhighlight %}
 
->  `http://www.myweb.com/news/activies/2014-08-26/123.html` 跳转为
+-  `http://www.myweb.com/news/activies/2014-08-26/123.html` 跳转为
 `http://www.myweb.com/news/activies/123.html`
 
 {% highlight java %}
 rewrite ^/news/activies/2014\-([0-9]+)\-([0-9]+)/(.*)$ http://www.myweb.com/news/activies/$3 permanent;
 {% endhighlight %}
 
-> nginx多条件重定向rewrite
+- nginx多条件重定向rewrite
 
 如果需要打开带有play的链接就跳转到play，不过/admin/play这个不能跳转
 
@@ -173,7 +173,7 @@ if ($payvar ~ '1'){
 }
 {% endhighlight %}
     
->  `http://www.myweb.com/?gid=6` 跳转为`http://www.myweb.com/123.html`
+-  `http://www.myweb.com/?gid=6` 跳转为`http://www.myweb.com/123.html`
 
 {% highlight java %}
 if ($request_uri ~ "/\?gid\=6"){

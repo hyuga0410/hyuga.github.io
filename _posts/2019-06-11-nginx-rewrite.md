@@ -57,10 +57,11 @@ server{
 }
 {% endhighlight %}
 
-# 资料参考
+# 资料转载
 
-[【技术颜良】常用nginx rewrite重定向-跳转实例](常用nginx
-rewrite重定向-跳转实例)
+[【技术颜良】常用nginx rewrite重定向-跳转实例 ](https://www.cnblogs.com/cheyunhua/p/8128039.html)
+
+原文地址：[https://www.cnblogs.com/cheyunhua/p/8128039.html](https://www.cnblogs.com/cheyunhua/p/8128039.html)
 
 以下内容为【技术颜良】常用nginx rewrite重定向-跳转实例 内容，谢谢分享：
 

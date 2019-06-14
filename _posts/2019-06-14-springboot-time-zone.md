@@ -26,7 +26,7 @@ tags:
 
 ## 解决过程
 
-- 更改数据库连接池参数
+- 更改数据库连接参数
 
 `basic.mysql.url=jdbc:mysql:replication://x.x.x.x,x.x.x.x/xx?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useLegacyDatetimeCode=false&serverTimezone=UTC`
    
@@ -48,7 +48,8 @@ tags:
 
 在启动类加上
 
-@PostConstruct void setDefaultTimezone() {
+@PostConstruct 
+void setDefaultTimezone() {
     TimeZone.setDefault(TimeZone.getTimeZone("Asia/Shanghai")); 
 }  
  
@@ -57,6 +58,7 @@ tags:
 public static void main(String[] args) { 　　 
     TimeZone.setDefault(TimeZone.getTimeZone("Asia/Shanghai")); 　　 
     //TimeZone.setDefault(TimeZone.getTimeZone("GMT+8")); 　　 
+    //TimeZone.setDefault(TimeZone.getTimeZone("UTC")) 
     SpringApplication.run(BaseMicroServiceApplication.class, args); }
 
 {% endhighlight %}
@@ -82,8 +84,45 @@ spring:
 
 ## 最终方案
 
-**更改数据库连接池参数**
+**更改数据库连接参数**
 
 `basic.mysql.url=jdbc:mysql:replication://x.x.x.x,x.x.x.x/xx?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useLegacyDatetimeCode=false&serverTimezone=GMT+8`
 
 顺利解决时间+8问题，插入查询时间正常！！！
+
+---
+
+Ps：
+
+其实最终就是要把数据库和程序的时区设置为一致，UTC也行，GMT+8也好，主要是保持一致。
+
+以下举例将两者设置为UTC.
+
+{% highlight java %} 
+数据库连接参数： 
+spring.datasource.url=jdbc:mysql://localhost:3306/db?useUnicode=true&characterEncoding=utf-8&useLegacyDatetimeCode=false&serverTimezone=UTC
+
+其中useLegacyDatetimeCode参数默认是true，我们需要手动设置为false，否则无效。 
+
+代码：
+@SpringBootApplication
+public class Application {
+      @PostConstruct
+      void started() {
+            TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+            //TimeZone.setDefault(TimeZone.getTimeZone("Asia/Shanghai"));
+            //TimeZone.setDefault(TimeZone.getTimeZone("GMT+8"));
+      } 
+      public static void main(String[] args) { 
+            SpringApplication.run(Application.class, args); 
+      } 
+}
+{% endhighlight %}
+
+这个方案我没亲自尝试过，不过应该也是可以解决问题的。
+
+
+
+
+
+

@@ -26,7 +26,7 @@ tags:
 
 ## 解决过程
 
-- 更改数据库连接参数
+> 更改数据库连接参数
 
 `basic.mysql.url=jdbc:mysql:replication://x.x.x.x,x.x.x.x/xx?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useLegacyDatetimeCode=false&serverTimezone=UTC`
    
@@ -42,7 +42,9 @@ tags:
 
 变成了典型的 +8 问题。。。
 
-- 配置启动类参数
+---
+
+> 配置启动类参数
 
 {% highlight java %}
 
@@ -65,21 +67,14 @@ public static void main(String[] args) { 　　
 
 很可惜，无效！
 
-- 在应用配置文件配置
+---
+
+> 在应用配置文件配置
 
 在`application.yml`或`bootstrap.yml`上配置
 
 {% highlight java %}
 ## json setting
-spring:
-  jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
-    #time-zone: GMT+8
-    time-zone: Asia/Shanghai
-    serialization:
-      write-dates-as-timestamps: false
-{% endhighlight %}
-
 spring:
   #spring boot2.0.0 架构问题 时间处理 （映射，时区问题）
   jackson:
@@ -94,18 +89,7 @@ spring:
     time-zone: Asia/Shanghai
     serialization:
       write-dates-as-timestamps: false
-      
-spring:
-
-  jackson:
-  
-     #JsonInclude.Include.ALWAYS              默认
-     #JsonInclude.Include.NON_DEFAULT     属性为默认值不序列化
-     #JsonInclude.Include.NON_EMPTY         属性为 空（””） 或者为 NULL 都不序列化
-     #JsonInclude.Include.NON_NULL           属性为NULL   不序列化
-    default-property-inclusion: ALWAYS
-    date-format: yyyy-MM-dd HH:mm:ss
-    time-zone: GMT+8
+{% endhighlight %}
 
 很遗憾，无效！
 
@@ -184,9 +168,9 @@ public class Application {
 
 ## 参考资料
 
-SpringBoot 统一时区的方案 [https://www.cnblogs.com/chancy/p/9995562.html](https://www.cnblogs.com/chancy/p/9995562.html)
-SpringBoot2.0设置时区问题 [https://www.liangzl.com/get-article-detail-27746.html](https://www.liangzl.com/get-article-detail-27746.html)
-JAVA插入数据到MySql少了8小时，多了6小时 [https://blog.csdn.net/u013042707/article/details/78783650](https://blog.csdn.net/u013042707/article/details/78783650)
+- SpringBoot 统一时区的方案 [https://www.cnblogs.com/chancy/p/9995562.html](https://www.cnblogs.com/chancy/p/9995562.html)
+- SpringBoot2.0设置时区问题 [https://www.liangzl.com/get-article-detail-27746.html](https://www.liangzl.com/get-article-detail-27746.html)
+- JAVA插入数据到MySql少了8小时，多了6小时 [https://blog.csdn.net/u013042707/article/details/78783650](https://blog.csdn.net/u013042707/article/details/78783650)
 
 
 

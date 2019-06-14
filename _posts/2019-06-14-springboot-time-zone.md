@@ -80,6 +80,33 @@ spring:
       write-dates-as-timestamps: false
 {% endhighlight %}
 
+spring:
+  #spring boot2.0.0 架构问题 时间处理 （映射，时区问题）
+  jackson:
+    #参数意义：
+    #JsonInclude.Include.ALWAYS        默认
+    #JsonInclude.Include.NON_DEFAULT   属性为默认值不序列化
+    #JsonInclude.Include.NON_EMPTY     属性为 空（””） 或者为 NULL 都不序列化
+    #JsonInclude.Include.NON_NULL      属性为NULL   不序列化
+    #default-property-inclusion: ALWAYS
+    date-format: yyyy-MM-dd HH:mm:ss
+    #time-zone: GMT+8
+    time-zone: Asia/Shanghai
+    serialization:
+      write-dates-as-timestamps: false
+      
+spring:
+
+  jackson:
+  
+     #JsonInclude.Include.ALWAYS              默认
+     #JsonInclude.Include.NON_DEFAULT     属性为默认值不序列化
+     #JsonInclude.Include.NON_EMPTY         属性为 空（””） 或者为 NULL 都不序列化
+     #JsonInclude.Include.NON_NULL           属性为NULL   不序列化
+    default-property-inclusion: ALWAYS
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
 很遗憾，无效！
 
 ## 最终方案
@@ -89,6 +116,40 @@ spring:
 `basic.mysql.url=jdbc:mysql:replication://x.x.x.x,x.x.x.x/xx?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useLegacyDatetimeCode=false&serverTimezone=GMT+8`
 
 顺利解决时间+8问题，插入查询时间正常！！！
+
+## 问题产生原因
+
+经过排查及查阅资料，出现这个问题并不是`SpringBoot2.x`的问题，而是`mysql`数据库链接jar包版本的问题。
+
+由于升级了`SpringBoot2.x`，对应的`mysql-connector-java`版本从`5.1.36`升级到`8.0.15`.
+
+版本升级后，查询出来的时间会比数据库存储的值多出6小时。
+
+回想起最初发现这个问题的时候，时间差异是有14小时，如下：
+
+{% highlight java %}
+
+数据库存储的值：2019-06-13 15:22:03 
+
+代码查询出来的值：2019-06-14 04:22:03
+
+{% endhighlight %}
+
+差异 = 8 + 6 = 14小时
+
+数据库连接参数改为`serverTimezone=UTC`后，时间变成了：
+
+{% highlight java %}
+
+数据库存储的值：2019-06-13 15:22:03 
+
+代码查询出来的值：2019-06-13 23:22:03
+
+{% endhighlight %}
+
+差异 = 8小时
+
+最终数据库连接参数改为`serverTimezone=GMT+8`后，一切才恢复正常。
 
 ---
 
@@ -121,7 +182,11 @@ public class Application {
 
 这个方案我没亲自尝试过，不过应该也是可以解决问题的。
 
+## 参考资料
 
+SpringBoot 统一时区的方案 [https://www.cnblogs.com/chancy/p/9995562.html](https://www.cnblogs.com/chancy/p/9995562.html)
+SpringBoot2.0设置时区问题 [https://www.liangzl.com/get-article-detail-27746.html](https://www.liangzl.com/get-article-detail-27746.html)
+JAVA插入数据到MySql少了8小时，多了6小时 [https://blog.csdn.net/u013042707/article/details/78783650](https://blog.csdn.net/u013042707/article/details/78783650)
 
 
 

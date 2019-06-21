@@ -54,3 +54,15 @@ tags:
 
 #### IDEA默认Settings设置
 ![](/img/2019/2019-04/idea-8.png)
+
+#### 修改默认的单行注释格式
+效果对比图如下！
+![](/img/2019/2019-04/idea-9.png) ![](/img/2019/2019-04/idea-10.png)
+
+修改入口：`File-->Settings-->Editor-->Code Style-->Java，修改Code Generation`
+
+去掉Line comment at first column前的对勾，选中Add a space at comment start，选中第二个是为了让//和注释中间加一个空格，然后点击Apply即可
+
+![](/img/2019/2019-04/idea-11.png)
+
+

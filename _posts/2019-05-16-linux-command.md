@@ -26,6 +26,13 @@ CentOS release 6.1 (Final)
 Linux version 2.6.32-358.el6.x86_64 (mockbuild@c6b8.bsys.dev.centos.org) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-3) (GCC) ) #1 SMP Fri Feb 22 00:31:26 UTC 2013 
 {% endhighlight %}
 
+## 查看系统时间
+- `date`
+
+{% highlight java %}
+2019年 07月 10日 星期三 14:43:34 CST
+{% endhighlight %}
+
 ## 命令编辑及光标移动
 
 - `ctrl + c`（另起一行） 或 `ctrl + u`(撤销所有)：输入指令错误，想重新来过

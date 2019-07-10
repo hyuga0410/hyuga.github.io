@@ -33,6 +33,22 @@ Linux version 2.6.32-358.el6.x86_64 (mockbuild@c6b8.bsys.dev.centos.org) (gcc ve
 2019年 07月 10日 星期三 14:43:34 CST
 {% endhighlight %}
 
+## 重启命令
+- `reboot` 普通重启
+- `shutdown -r now` 立刻重启(root用户使用)
+- `shutdown -r 10` 过10分钟自动重启(root用户使用)
+- `shutdown -r 20:35` 在时间为20:35时候重启(root用户使用)
+
+如果是通过shutdown命令设置重启的话，可以用shutdown -c命令取消重启
+
+## 关机命令
+- `halt` 立刻关机
+- `poweroff` 立刻关机
+- `shutdown -h now` 立刻关机(root用户使用)
+- `shutdown -h 10` 10分钟后自动关机
+
+如果是通过shutdown命令设置关机的话，可以用shutdown -c命令取消重启
+
 ## 命令编辑及光标移动
 
 - `ctrl + c`（另起一行） 或 `ctrl + u`(撤销所有)：输入指令错误，想重新来过

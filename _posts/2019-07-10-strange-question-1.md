@@ -42,3 +42,10 @@ Spring Boot 报错
 {% endhighlight %}
 
 后来把服务迁移到`CentOS release 6.4 (Final)`上就可以了，并且再往上的系统版本也都正常。
+
+#### Bean注入顺序问题
+- `@Order(int)` 需要多个类配置，标明顺序
+    - order的值越小，优先级越高
+    - order如果不标注数字，默认最低优先级，因为其默认值是int最大值
+    - 该注解等同于实现Ordered接口getOrder方法，并返回数字
+- `@DependsOn(String)` 指定Spring容器初始化当前Bean之前 先初始化所依赖的Bean，比如`@DependsOn("yhaoCache")`

@@ -16,11 +16,9 @@ tags:
 
 **本文转载自：[SpringCloud：Eureka的健康检测机制](https://blog.csdn.net/akaks0/article/details/79512680)**
 
-作者：akaks0
- 
-来源：CSDN
- 
-原文：https://blog.csdn.net/akaks0/article/details/79512680 
+- 作者：akaks0 
+- 来源：CSDN 
+- 原文：https://blog.csdn.net/akaks0/article/details/79512680
 
 #### eureka-server
 

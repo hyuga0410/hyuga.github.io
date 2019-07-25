@@ -134,3 +134,8 @@ private static ThreadLocal<Context> contextThreadLocal = new ThreadLocal<>();
 - 作者：[代码小司机](https://me.csdn.net/hewenbo111)
 - [【InheritableThreadLocal——父线程传递本地变量到子线程的解决方式及分析】](https://blog.csdn.net/hewenbo111/article/details/80487252)
 
+> 摘要：
+
+上一个博客提到ThreadLocal变量的基本使用方式，可以看出ThreadLocal是相对于每一个线程自己使用的本地变量，但是在实际的开发中，有这样的一种需求：父线程生成的变量需要传递到子线程中进行使用，那么在使用ThreadLocal似乎就解决不了这个问题，难道这个业务就没办法使用这个本地变量了吗？答案肯定是否定的，ThreadLocal有一个子类InheritableThreadLocal就是为了解决这个问题而产生的，使用这个变量就可以轻松的在子线程中依旧使用父线程中的本地变量。
+
+......

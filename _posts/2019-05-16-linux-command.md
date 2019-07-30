@@ -33,6 +33,11 @@ Linux version 2.6.32-358.el6.x86_64 (mockbuild@c6b8.bsys.dev.centos.org) (gcc ve
 2019年 07月 10日 星期三 14:43:34 CST
 {% endhighlight %}
 
+## 安装wget命令
+
+- debian 或者 ubuntu : `sudo apt-get install wget`
+- centos : `sudo yum -y install wget`
+
 ## 重启命令
 - `reboot` 普通重启
 - `shutdown -r now` 立刻重启(root用户使用)

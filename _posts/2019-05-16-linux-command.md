@@ -153,6 +153,28 @@ ls -A #列出当前目录下所有文件，包括隐藏文件，不包括前目�
 ls -al  # 列出当前目录所有文件，并且使用长格式显示所有信息，包括权限，大小，用户，时间等，与ll作用相同
 ```
 
+## 设置全局执行命令
+
+linux将shell脚本所在目录路径添加到path，即可在系统任何地方执行该目录下的脚本，如果执行不了，请chmod授权。
+
+步骤如下：
+
+- `vim /etc/profile` 打开全局配置文件
+- 添加到path，如下
+- `source /etc/profile`使得配置生效，即可在任意地方执行脚本
+
+{% highlight java %}
+打开/etc/profile文件后，将as.sh脚本所在目录/data/www/hyuga添加到path后，如下
+
+JAVA_HOME=/usr/local/jdk-11
+PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin:$ANT_HOME/bin:/opt/node-v11.1.0-linux-x64/bin:/data/www/hyuga
+MAVEN_HOME=/opt/maven/apache-maven-3.5.4
+export ANT_HOME=/opt/ant/apache-ant-1.9.7
+export JMETER=/opt/jmeter/apache-jmeter-5.0
+export CLASSPATH=$JAVA_HOME/lib:$CONF_DIR$JMETER/lib/ext/ApacheJMeter_core.jar:$JMETER/lib/logkit-2.0.jar:$CLASSPATH
+export JAVA_HOME PATH
+{% endhighlight %}
+
 ## 设置全局快捷命令
 
 `vim ~/.bash_profile`

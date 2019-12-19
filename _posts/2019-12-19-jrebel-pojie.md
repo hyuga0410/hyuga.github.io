@@ -14,7 +14,7 @@ tags:
 
 #### 教程来源
 
-[Jrebel激活服务搭建](https://www.cnblogs.com/jimoer/p/11161339.html)
+[纪莫]()_[Jrebel激活服务搭建](https://www.cnblogs.com/jimoer/p/11161339.html)
 
 #### Jrebel
 Jrebel是什么就不啰嗦了，神器自由妙用。
@@ -30,9 +30,9 @@ Jrebel是什么就不啰嗦了，神器自由妙用。
 
 3. 发行版地址：[https://gitee.com/gsls200808/JrebelLicenseServerforJava/attach_files/135982/download](https://gitee.com/gsls200808/JrebelLicenseServerforJava/attach_files/135982/download)
 
-4. 启动：/user/../jdk/java -jar JrebelBrainsLicenseServerforJava-1.0-SNAPSHOT-jar-with-dependencies.jar(默认端口8081)
+4. 启动：`/user/../jdk/java -jar JrebelBrainsLicenseServerforJava-1.0-SNAPSHOT-jar-with-dependencies.jar`(默认端口8081)
 
-5. 或指定端口启动：/user/../jdk/java -jar JrebelBrainsLicenseServerforJava-1.0-SNAPSHOT-jar-with-dependencies.jar -p 8082
+5. 或指定端口启动：`/user/../jdk/java -jar JrebelBrainsLicenseServerforJava-1.0-SNAPSHOT-jar-with-dependencies.jar -p 8082`
 
 启动后进程：
 {% highlight java %}
@@ -43,10 +43,10 @@ root     20098 19294  0 11:22 pts/1    00:00:00 grep Jrebel
 
 上述是最便捷的方式，然后只要到idea工具中激活即可，教程如下！
 
-![](../img/2019/2019-12/jrebel-1.png)
-![](../img/2019/2019-12/jrebel-2.png)
-![](../img/2019/2019-12/jrebel-3.png)
-![](../img/2019/2019-12/jrebel-4.png)
+![](/img/2019/2019-12/jrebel-1.png)
+![](/img/2019/2019-12/jrebel-2.png)
+![](/img/2019/2019-12/jrebel-3.png)
+![](/img/2019/2019-12/jrebel-4.png)
 
 到这里就算是大功告成了。
 

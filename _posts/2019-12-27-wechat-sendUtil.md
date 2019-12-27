@@ -88,7 +88,7 @@ public abstract class AbstractWeChatData {
 }
 {% endhighlight %}
 
-> 传文本 
+> 纯文本 
 {% highlight java %}
 package hyuga.util.wechat.data;
 

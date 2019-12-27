@@ -9,7 +9,7 @@ header-mask:  0.3
 catalog:      true
 multilingual: false
 tags:
-    - weChat
+    - WeChat
 ---
 
 #### 相关网址

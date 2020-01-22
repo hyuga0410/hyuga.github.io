@@ -101,3 +101,107 @@ Error response from daemon: Conflict. The container name "/webserver" is already
 所以需要先执行rm操作
 
 好了，docker的第一篇记录就到这里了！！！
+
+# 安装mariadb
+Docker 中提供了很多 MariaDB 的镜像，可以通过以下命令查询
+
+`docker search mariadb`
+
+我们使用官方提供的镜像，以下为获取下载镜像，默认获取最新的版本
+`docker pull mariadb`
+
+接下来，创建一个 MariaDB 容器
+
+`docker run --name mariadb_hyuga -e MYSQL_ROOT_PASSWORD=xxx -d mariadb`
+
+通过官网mariadb镜像创建一个本地mariadb容器，密码为xxx
+
+> 13261d65d273ea36638d230ea8af9f8d6d66a6d41a154d0db598563769699977
+
+启动容器：`docker start mariadb_hyuga`
+
+执行 `docker ps -a`，可以看到当前本地容器仓库已安装的容器
+> CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS               NAMES
+  13261d65d273        mariadb             "docker-entrypoint.s…"   37 seconds ago      Up 36 seconds              3306/tcp            mariadb_hyuga
+
+上面刚安装的 MariaDB 【mariadb_hyuga】 容器已经在运行中。
+
+接下来进入【mariadb_hyuga】容器中。
+
+`docker exec -it 13261d65d273 bash` 或者 `docker exec -it mariadb_hyuga bash`都可以进入容器。
+
+显示`root@13261d65d273:/#`表示已经进入容器。
+
+接着进入数据库：`mysql -u root -p`，输入密码`xxx`
+
+这时的 MariaDB 已经可以正常使用，但是无法远程连接，因此我们需要映射端口来让我们的数据库能被远程访问。
+
+`docker run -d -P --name mariadb_connect -e MYSQL_ROOT_PASSWORD=xxx mariadb`
+> 2a84e14a1fba2ae96a25403de269946c4baf00af5cf1453c0707fb7a74a30d55
+
+通过 -P 参数，Docker 会为我们自动分配一个未被使用的端口，这里是 32768.
+
+执行`docker ps -a`可以看到，多了一个容器mariadb_connect，用于将容器`mariadb_hyuga`端口映射出去。
+
+> CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                     NAMES
+  2a84e14a1fba        mariadb             "docker-entrypoint.s…"   52 seconds ago      Up 50 seconds       0.0.0.0:32768->3306/tcp   mariadb_connect
+  74ee06107710        mariadb             "docker-entrypoint.s…"   20 minutes ago      Up 20 minutes       3306/tcp                  mariadb_hyuga
+
+接下来，尝试使用数据库客户端工具来测试一下是否能连接。
+
+如果需要指定映射端口，可以使用这个命令`-p hostPort:containerPort`
+
+如：`docker run -d -p 3306:3306 --name mariadb_connect -e MYSQL_ROOT_PASSWORD=xxx mariadb`
+
+第一个3306是主机的端口，第二个3306是容器的端口
+
+接着用数据库连接工具连接就可以了：127.0.0.1:3306
+
+#### 查看docker某个容器的ip
+`docker inspect mariadb_hyuga | grep IPAddress`
+
+输出如下，表明mariadb_hyuga的ip地址是`172.17.0.2`
+{% highlight java %}
+"SecondaryIPAddresses": null,
+            "IPAddress": "172.17.0.2",
+                    "IPAddress": "172.17.0.2",
+{% endhighlight %}
+
+# docker安装redis
+拉取最新的redis镜像`docker pull redis`
+
+查看本地已拉取的镜像`docker images`，可以看到两个镜像，分别是mariadb和reids
+
+启动redis：`docker run -p 6379:6379 -d redis:latest redis-server`，并映射好端口，其实上面的mariadb_hyuga也可以用这中方式启动映射。
+
+{% highlight java %}
+菜鸟教程：
+docker run -p 6379:6379 -v $PWD/data:/data  -d redis:3.2 redis-server --appendonly yes
+
+命令说明：
+-p 6379:6379 : 将容器的6379端口映射到主机的6379端口
+-v $PWD/data:/data : 将主机中当前目录下的data挂载到容器的/data
+redis-server --appendonly yes : 在容器执行redis-server启动命令，并打开redis持久化配置
+{% endhighlight %}
+
+{% highlight java %}
+docker exec -ti 容器名 redis-cli
+
+docker exec -ti 容器名 redis-cli -h localhost -p 6379
+docker exec -ti 容器名 redis-cli -h 127.0.0.1 -p 6379
+docker exec -ti 容器名 redis-cli -h 172.17.0.3 -p 6379
+
+// 容器名可以通过 docker ps -a 查看，最后一列就是。
+// 注意，这个是容器运行的ip，可通过 docker inspect redis_s | grep IPAddress 查看
+{% endhighlight %}
+
+
+使用redis镜像执行redis-cli命令连接到刚启动的容器,主机IP为172.17.0.1
+
+`docker exec -it redis_s redis-cli`
+127.0.0.1:6379>
+如果连接远程：
+
+`docker exec -it redis_s redis-cli -h 192.168.1.100 -p 6379 -a your_password` //如果有密码 使用 -a参数
+192.168.1.100:6379>
+

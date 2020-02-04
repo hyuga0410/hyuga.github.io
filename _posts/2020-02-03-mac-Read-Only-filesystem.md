@@ -27,7 +27,11 @@ tags:
 
 一、怎么关闭SIP？
 
-关闭电脑，按住电源键启动并按住 Command + R 进入 macOS 恢复系统，等检索完磁盘，在左上角的实用工具里面点击终端，加上下面这一句代码。
+关闭电脑，按住电源键启动并按住 Command + R 进入 macOS 恢复系统。
+
+等检索完磁盘，选择一个账户，然后点击屏幕上方的工具栏找到命令行工具。
+
+在实用工具里面点击终端，加上下面这一句代码。
 
 ```
 csrutil disable
@@ -35,22 +39,22 @@ csrutil disable
 
 按下回车键，看见successfully...这时已经关闭SIP。
 
-二、重新启动电脑
-重启电脑后，打开终端，执行：
+二、重新常规启动电脑
+重启电脑后（正常启动，不进入恢复模式），打开终端，执行：
 ```
-sudo mount -uw
+sudo mount -uw /
 ```
 
 三、创建目录
 ```
 sudo mkdir /log
-sudo chmod 777 log
+sudo chmod 777 /log
 ```
 
 四、重新开启SIP
 按第一步进入恢复系统，执行：
 ```
-csrutil enabled
+csrutil enable
 ```
 
 PS：作为开发人员就没必要再开启SIP了。

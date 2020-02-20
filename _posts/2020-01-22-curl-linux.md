@@ -115,6 +115,12 @@ curl使用内置option：-e可以指定referer
 - GET `curl "https://www.baidu.com/xxx.php?proxy=in_hp&sort=&page=5"`
 - POST `curl -d 'post_data=param_value' https://www.baidu.com/ip.php`
 
+#### Post json
+`curl -H "Content-Type:application/json" -H "Data_Type:msg" -X POST --data '{"cityCode":"SHENZHEN","isUpdatedByBusinessSide":"N","keyword":"东海"}' https://api.xxx.com/dict-api/apiGarden/query`
+
+- --data（即-d）指定的参数必须符合json格式
+- -H 指定headers头的时候必须单个使用，即一个-H指定一个头字段信息，如上crul示例那样。
+
 #### 注意
 
 get请求curl需要url前后加上"，否则&开始后面会被截取掉。

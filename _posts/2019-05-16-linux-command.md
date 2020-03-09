@@ -277,3 +277,25 @@ Linux lvs213.business 2.6.32-754.el6.x86_64 #1 SMP Tue Jun 19 21:26:04 UTC 2018 
 watch -n 1 cat /proc/meminfo 
 watch -n 1 cat /proc/net/dev
 ```
+## lspci
+- centos7中安装lspci工具 `yum install pciutils -y`
+- 查看VGA显卡信息 `lspci | grep -i vga`
+
+```shell script
+00:02.0 VGA compatible controller: Cirrus Logic GD 5446
+[root@lvs211 ~]# lspci -v -s 00:02.0
+```
+`00:02.0`表示显卡的代号，查看显卡详细信息 `lspci -v -s 00:02.0`
+```shell script
+00:02.0 VGA compatible controller: Cirrus Logic GD 5446 (prog-if 00 [VGA controller])
+	Subsystem: Red Hat, Inc. QEMU Virtual Machine
+	Physical Slot: 2
+	Flags: fast devsel
+	Memory at f0000000 (32-bit, prefetchable) [size=32M]
+	Memory at f2000000 (32-bit, non-prefetchable) [size=4K]
+	Expansion ROM at f2010000 [disabled] [size=64K]
+	Kernel modules: cirrusfb
+```
+
+- 查看Nvidia(英伟达) GPU显卡信息 `lspci | grep -i nvidia`
+- 查看Nvidia显卡信息及使用情况 `nvidia-smi`

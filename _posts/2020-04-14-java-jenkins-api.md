@@ -57,7 +57,7 @@ JenkinsServer jenkinsServer = new JenkinsServer(new URI("http://10.152.2.xxx:808
 
 > Shell脚本 + JSOUP解析（最终方案）
 
-找到了JAVA_API依赖包和JSOUP依赖包：
+加入JSOUP依赖包：
 {% highlight java %}
 <dependency>
     <!-- jsoup HTML parser library @ https://jsoup.org/ -->

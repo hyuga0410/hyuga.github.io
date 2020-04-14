@@ -79,10 +79,8 @@ public Map<String, Map<String, String>> getEnvList() {
     String shell = XshellUtil.shell(shellList);
     Elements elementsByClass = Jsoup.parse(shell).body().getElementsByClass("repeated-container").last().getElementsByClass("repeated-chunk");
 
-
     for (int i = 1; i < elementsByClass.size(); i++) {
         Elements elementsByClass1 = elementsByClass.get(i).getElementsByClass("setting-main");
-
 
         String envKey = elementsByClass1.get(0).select("input[value]").val();
         String envValue = elementsByClass1.get(1).select("input[value]").val();

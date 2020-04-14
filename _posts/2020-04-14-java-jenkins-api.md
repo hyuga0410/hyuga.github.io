@@ -17,34 +17,35 @@ tags:
 
 所以考虑把Jenkins的configure页面中的环境变量抓取到另一个项目中（导航项目），便于所有人直观的查看各环境的变量配置。
 
+![](/img/2020/2020-04/java-jenkins-1.png)
+
 ## 实现方案
 
-- JSON-API（采用Jenkins的JSON-API接口获取信息）
+> JSON-API（采用Jenkins的JSON-API接口获取信息）
 
-```shell script
-http://10.152.2.211:8089/jenkins/api/json
--- http://10.152.2.211:8089/jenkins/为项目名称
-```
+`http://10.152.2.xxx:8089/jenkins/api/json`
+
+**http://10.152.2.xxx:8089/jenkins/为项目名称**
 
 Jenkins右下角有快捷入口【REST_API】，Jenkins提供了三种api（XML_API、JSON_API、Python_API）
 
-`http://10.152.2.211:8089/jenkins/api/` 里面有各种用法。
+`http://10.152.2.xxx:8089/jenkins/api/` 里面有各种用法。
 
 里面能获取到视图primaryView、views和jobs等数据，但是没有configure的信息，不满足需求。
 
-- 爬取页面信息
+> 爬取页面信息
 
 想通过爬取页面提取配置信息，但是怎么也没搞定登录那部分的处理，最终放弃。
 
-- 通过JAVA_API
+> 通过JAVA_API
 
-```shell script
+{% highlight java %}
 <dependency>
     <groupId>com.offbytwo.jenkins</groupId>
     <artifactId>jenkins-client</artifactId>
     <version>0.3.8</version>
 </dependency>
-```
+{% endhighlight %}
 
 {% highlight java %}
 JenkinsServer jenkinsServer = new JenkinsServer(new URI("http://10.152.2.xxx:8089/jenkins/configure"), "hyuga", "123456");
@@ -54,17 +55,17 @@ JenkinsServer jenkinsServer = new JenkinsServer(new URI("http://10.152.2.xxx:808
 
 不过这种方式也可以通过Java代码获取很多Jenkins的任务信息，对于自定义Jenkins还是很有用的。
 
-- Shell脚本 + JSOUP解析（最终方案）
+> Shell脚本 + JSOUP解析（最终方案）
 
 找到了JAVA_API依赖包和JSOUP依赖包：
-```shell script
+{% highlight java %}
 <dependency>
     <!-- jsoup HTML parser library @ https://jsoup.org/ -->
     <groupId>org.jsoup</groupId>
     <artifactId>jsoup</artifactId>
     <version>1.11.3</version>
 </dependency>
-```
+{% endhighlight %}
 
 代码如下：
 {% highlight java %}

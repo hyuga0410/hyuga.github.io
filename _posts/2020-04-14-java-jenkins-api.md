@@ -2,7 +2,7 @@
 layout:       post
 title:        "Java整合Jenkins"
 subtitle:     "Java获取Jenkins-api相关信息"
-date:         2020-03-31 20:42:05
+date:         2020-04-14 20:42:05
 author:       "Hyuga"
 header-img:   "img/cover/head-top-12.jpg"
 header-mask:  0.3

@@ -33,6 +33,19 @@ Linux version 2.6.32-358.el6.x86_64 (mockbuild@c6b8.bsys.dev.centos.org) (gcc ve
 2019年 07月 10日 星期三 14:43:34 CST
 {% endhighlight %}
 
+## 获取命令执行时间
+
+`time [option] comand [arguments...]`
+
+在命令执行完成之后就会打印出CPU的使用情况：
+{% highlight java %}
+real    0m5.064s      <== 实际使用时间（从command命令开始执行到运行终止的消耗的总时间）
+user    0m0.020s      <== 用户态使用时间（命令执行完成花费的用户CPU时间，即命令在用户态中执行时间总和）
+sys     0m0.040s      <== 内核态使用时间（命令执行完成花费的系统CPU时间，即命令在核心态中执行时间总和）
+{% endhighlight %}
+
+注：通常来说real > user+sys，比说说命令执行会等待IO，等待IO时并没有实际消耗CPU的时间。
+
 ## 安装wget命令
 
 - debian 或者 ubuntu : `sudo apt-get install wget`

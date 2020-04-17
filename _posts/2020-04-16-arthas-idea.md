@@ -40,29 +40,29 @@ PS:
 
 本地或服务器上，创建arthas目录，`cd arthas`，执行`curl -L https://alibaba.github.io/arthas/install.sh | sh`
 
-![](../img/2020/2020-04/arthas-idea-1.png)
+![](/img/2020/2020-04/arthas-idea-1.png)
 
 > 启动arthas.sh
 
 `sh arthas.sh`
 
-![](../img/2020/2020-04/arthas-idea-2.png)
+![](/img/2020/2020-04/arthas-idea-2.png)
 
 选择展示出来的进程pid对应的序号，enter，好，接下来正式进入arthas诊断。
 
-![](../img/2020/2020-04/arthas-idea-3.png)
+![](/img/2020/2020-04/arthas-idea-3.png)
 
 #### Arthas-IDEA插件支持功能
 
-![](../img/2020/2020-04/arthas-idea-4.png)
+![](/img/2020/2020-04/arthas-idea-4.png)
 
-![](../img/2020/2020-04/arthas-idea-4.1.png)
+![](/img/2020/2020-04/arthas-idea-4.1.png)
 
 支持的功能主要有：
 
-![](../img/2020/2020-04/arthas-idea-5.png)
+![](/img/2020/2020-04/arthas-idea-5.png)
 
-![](../img/2020/2020-04/arthas-idea-0.png)
+![](/img/2020/2020-04/arthas-idea-0.png)
 
 [【官网插件地址】](https://github.com/WangJi92/arthas-idea-plugin)
 
@@ -86,7 +86,7 @@ PS:
 
 但因信息过程，为了不被后续请求干扰当次请求信息查看，可以`Press Q or Ctrl+C to abort.`按`Q`或者`Ctrl+C`退出当前命令。
 
-![](../img/2020/2020-04/arthas-idea-6.png)
+![](/img/2020/2020-04/arthas-idea-6.png)
 
 #### trace
 
@@ -94,7 +94,7 @@ PS:
 
 `trace com.hyuga.dict.controller.ApiGardenController getGardenDetails -n 5`
 
-![](../img/2020/2020-04/arthas-idea-7.png)
+![](/img/2020/2020-04/arthas-idea-7.png)
 
 #### stack
 
@@ -102,7 +102,7 @@ PS:
 
 `stack com.hyuga.dict.controller.ApiGardenController getGardenDetails -n 5`
 
-![](../img/2020/2020-04/arthas-idea-8.png)
+![](/img/2020/2020-04/arthas-idea-8.png)
 
 #### monitor
 
@@ -110,7 +110,7 @@ PS:
 
 `monitor com.hyuga.dict.controller.ApiGardenController getGardenDetails -n 10 --cycle 10` 每10s统计一次
 
-![](../img/2020/2020-04/arthas-idea-9.png)
+![](/img/2020/2020-04/arthas-idea-9.png)
 
 ## 进阶用法
 
@@ -134,8 +134,8 @@ PS:
 调用查看该静态方法字段的值
 
 二、Set Static Field（设置静态字段）
-![](../img/2020/2020-04/arthas-idea-10.png)
-![](../img/2020/2020-04/arthas-idea-11.png)
+![](/img/2020/2020-04/arthas-idea-10.png)
+![](/img/2020/2020-04/arthas-idea-11.png)
 
 a. 选中常量`private static final String BASE_PACKAGE = "hyuga";`
 
@@ -151,7 +151,7 @@ e. 控制台执行，则运行的服务中该静态变量变更为`hyuga-test`
 
 便于查询某个配置项是否生效。
 
-![](../img/2020/2020-04/arthas-idea-14.png)
+![](/img/2020/2020-04/arthas-idea-14.png)
 
 要先设置 applicationContextProvider，具体参考官方文档。
 
@@ -165,12 +165,12 @@ ognl -x 3 '#springContext=@applicationContextProvider@context,#springContext.get
 
 `tt -t com.hyuga.dict.controller.ApiGardenController getGardenDetails -n 5`
 
-![](../img/2020/2020-04/arthas-idea-12.png)
+![](/img/2020/2020-04/arthas-idea-12.png)
 
 INDEX 代表当次请求
 
 - `tt -p -i 1000` 重新触发一次（打印请求和响应等详细信息）
-![](../img/2020/2020-04/arthas-idea-13.png)
+![](/img/2020/2020-04/arthas-idea-13.png)
 
 - `tt -w '{method.name,params,returnObj,throwExp}' -x 3 -i 1000`（打印入参he返回值）
 

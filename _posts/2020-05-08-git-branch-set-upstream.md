@@ -4,7 +4,7 @@ title:        "GIT本地关联远程分支"
 subtitle:     "git branch --set-upstream 本地关联远程分支"
 date:         2020-05-08 22:42:05
 author:       "Hyuga"
-header-img:   "img/cover/head-top-23.jpg"
+header-img:   "img/cover/head-top-34.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false

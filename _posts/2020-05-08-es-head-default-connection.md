@@ -1,10 +1,10 @@
 ---
 layout:       post
-title:        "Git替换master分支并推送到远程服务器"
-subtitle:     "删除远程master分支，本地新分支改名为master，推送到git服务器"
+title:        "ES - HEAD 配置默认连接地址"
+subtitle:     "ES - HEAD 控制台配置默认连接地址"
 date:         2020-05-08 22:42:05
 author:       "Hyuga"
-header-img:   "img/cover/head-top-26.jpg"
+header-img:   "img/cover/head-top-33.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false

@@ -99,13 +99,10 @@ service-worker: true
 # Friends
 friends: [
 {
-  title: "Youtube",
-  href: "http://www.youtube.com/"
+  title: "屈定's Blog",
+  href: "https://mrdear.cn/"
 },{
   title: "Hollis",
   href: "http://www.hollischuang.com/"
-},{
-  title: "Apple",
-  href: "https://apple.com/cn"
 }
 ]

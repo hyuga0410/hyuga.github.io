@@ -9,7 +9,7 @@ header-mask:  0.3
 catalog:      true
 multilingual: false
 tags:
-    - alfred
+    - 工具
 ---
 
 **转载自：** [https://github.com/mrdear/command-search-alfred](https://github.com/mrdear/command-search-alfred)

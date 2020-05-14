@@ -9,7 +9,7 @@ header-mask:  0.3
 catalog:      true
 multilingual: false
 tags:
-    - alfred
+    - 工具
 ---
 
 # 前言

@@ -5,7 +5,7 @@ header-img: img/home/home-bg.jpg
 email: hyuga0410@gmail.com
 description: "每一次失败都通向成功."
 keyword: "秦枫, hyuga0410, @hyuga0410, 秦枫的博客, Hyuga0410, 博客, 个人网站, 互联网, Web, 后端"
-url: "http://hyuga.top"          # your host, for absolute URL
+url: "http://github.hyuga.top"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/hyuga0410/hyuga0410.github.io.git" # you code repository
 
@@ -78,7 +78,7 @@ gitalk:
 
 # Google Analytics
 ga_track_id: 'UA-124165058-1'            # Format: UA-xxxxxx-xx
-ga_domain: hyuga.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_domain: github.hyuga.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 

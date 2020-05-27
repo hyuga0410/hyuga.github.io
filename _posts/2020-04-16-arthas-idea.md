@@ -21,7 +21,7 @@ tags:
 项目地址：[https://gitee.com/arthas/arthas](https://gitee.com/arthas/arthas)
 
 PS: 
-- 大致内容之前已整理 [【阿里巴巴-Arthas诊断工具】](http://hyuga.top/2019/07/30/arthas/)
+- 大致内容之前已整理 [【阿里巴巴-Arthas诊断工具】](http://github.hyuga.top/2019/07/30/arthas/)
 - 本文主要讲解Arthas的idea插件，以及arthas的简单用法。
 
 ## Arthas-IDEA
